@@ -46,6 +46,7 @@
 .dropdown-menu{
     width: 90%;
     margin: auto;
+    padding-bottom: 10px;
 }
 
 /* Submenu navbar */
