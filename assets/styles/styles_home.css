@@ -43,12 +43,6 @@
     width: 100%;
 }
 
-.dropdown-menu{
-    width: 90%;
-    margin: auto;
-    padding-bottom: 10px;
-}
-
 /* Submenu navbar */
 .dropdown-toggle:hover{
     cursor: pointer;
@@ -70,17 +64,6 @@
     padding-bottom: 15px;
 }
 
-#navbarNavDropdown{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100px;
-    background-color: #f8f9fa!important;
-    padding-left: 5px;
-    max-height: 450px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
 /* ----- Background img -----*/
 
 #home-cover{
@@ -204,7 +187,26 @@
 }
 
 @media (max-width: 992px) {
+    #navbarNavDropdown{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100px;
+        background-color: #f8f9fa!important;
+        padding-left: 5px;
+        max-height: 400px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
 
+    .nav-item{
+        padding-bottom: 7px;
+    }
+
+    .dropdown-menu{
+        width: 90%;
+        margin: auto;
+    }
     .home-background-img{
         background-position: left;
         height: 70vh;
