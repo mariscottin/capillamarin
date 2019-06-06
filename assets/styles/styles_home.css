@@ -43,6 +43,11 @@
     width: 100%;
 }
 
+.dropdown-menu{
+    width: 90%;
+    margin: auto;
+}
+
 /* Submenu navbar */
 .dropdown-toggle:hover{
     cursor: pointer;
@@ -65,14 +70,25 @@
 }
 
 #navbarNavDropdown{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100px;
     background-color: #f8f9fa!important;
-    width: 400px;
-    padding-left: 20px;
+    padding-left: 5px;
     max-height: 400px;
     overflow-y: scroll;
     overflow-x: scroll;
 }
 
+/* .navbar-nav{
+    position: absolute;
+    left: 0;
+    right:0;
+    background-color: #f8f9fa!important;
+    width: 100%;
+    margin: auto;
+} */
 /* ----- Background img -----*/
 
 #home-cover{
