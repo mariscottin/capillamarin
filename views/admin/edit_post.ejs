@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Capilla Marin | Admin</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/assets/styles/styles_new_post.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicon.ico"> 
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <p class="navbar-brand">Capilla Marín - Admin</p>
+        </nav>
+        <a href="/admin/posts" class="back-link">Atrás</a>
+        <div class="container">
+            <h1 class="new-novedad-h1">Editar Novedad</h1>
+            <form action="/post/edit/<%=post.id%>" method='post' class="new-form">
+                <input type="text" name="title" value="<%=post.title%>" class="title form-control new-form-input" required autofocus>
+                <br>
+                <input type="text" name="img_url" value="<%=post.img_url%>" class="form-control new-form-input" required>
+                <br>
+                <textarea name="body" class="form-control new-form-input" required><%=post.body%></textarea> 
+                <br>
+                <button type="submit" class="btn btn-md btn-primary"><i class="fas fa-pen"></i>Editar</button>
+            </form>
+        </div>
+    </body>
+</html>

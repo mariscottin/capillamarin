@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Capilla Marin | Admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/styles/styles_all_posts.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/ico" href="/assets/img/favicon.ico"> 
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <p class="navbar-brand">Capilla Marín - Admin</p>
+    </nav>
+    <p><a href="/admin" class="back-link">Atrás</a></p>
+    <div class="wrapper">
+        <h1>Novedades</h1>
+        <% if(typeof alert !== 'undefined') { %>
+            <div class="alert alert-success" id="alert-msg" role="alert">
+                <p class="close-alert" id="close-x">x</p>
+                <%= alert %>
+            </div>
+        <% } %>
+        <a href="/admin/posts/new" class="btn btn-md btn-primary new-post-link">Crear Novedad</a>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="main-heading">
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Sección</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Novedad</th>
+                        <th scope="col">Foto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%  for(let i=0; i<posts.length; i++) {%>
+                        <tr>
+                            <th scope="row">
+                                <span class="table-icon delete-icon" data-toggle="modal" data-target="#imgModal"><i class="far fa-trash-alt"></i></span>
+                                <div class="modal fade" id="imgModal" tabindex="-1" role="dialog" aria-labelledby="imgModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="imgModalLabel">Atención</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                ¿Estás seguro que quieres eliminar esta novedad?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                                                <form action="/post/delete/<%=posts[i].id%>" method="post">
+                                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </th>
+                            <th scope="row">
+                                <span class="table-icon edit-icon"><a href="/post/edit/<%=posts[i].id%>"><i class="fas fa-pen"></a></i></span>
+                            </th>
+                            <td><%=posts[i].date%></td>
+                            <td>Sección</td>
+                            <td><%=posts[i].title%></td>
+                            <td><%=posts[i].body%></td>
+                            <td data-toggle="modal" data-target="#imgModal_<%=posts[i].id%>"><img src="<%=posts[i].img_url%>" alt="Img_<%=posts[i].title%>" class="table-img"></td>
+                            <div class="modal fade" id="imgModal_<%=posts[i].id%>" tabindex="-1" role="dialog" aria-labelledby="imgModalLabel_<%=posts[i].id%>" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="<%=posts[i].img_url%>" alt="Img_<%=posts[i].title%>" class="modal-img">
+                                        </div>
+                        
+                                    </div>
+                                </div>
+                            </div>    
+                        </tr>
+                    <% }%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        let closeMsg = document.getElementById('close-x');
+        let msg = document.getElementById('alert-msg');
+        closeMsg.addEventListener('click', ()=>{
+            msg.style.display = 'none'
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

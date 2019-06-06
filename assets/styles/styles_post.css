@@ -1,0 +1,26 @@
+
+.novedad-wrapper{
+    text-align: center;
+}
+
+.img-wrapper{
+    max-width: 500px;
+    margin: auto;
+}
+
+.post_img{
+    width: 80%;
+}
+
+.body-wrapper{
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: left;
+}
+
+@media (max-width: 767px) { 
+    .body-wrapper{
+        width: 80%;
+    }
+}

@@ -1,0 +1,28 @@
+/* Login */
+body {
+    background-color: rgb(240, 240, 240);
+    padding-top: 50px;
+}
+
+.form-signin{
+    width: 40%;
+    margin:auto;
+}
+
+.form-control{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.btn-login{
+    margin-top:8px;
+    margin-bottom: 8px;
+    background-color: #1c79dd;
+}
+
+
+@media(max-width: 991px) {
+    .form-signin{
+        width: 80%;
+    }
+}

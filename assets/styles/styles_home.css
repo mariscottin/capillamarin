@@ -1,0 +1,437 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*----- COMMON CLASSES -----*/
+
+.section-title{
+    text-align: center;
+    padding-top: 20px;
+    
+}
+
+.main-title{
+    text-align: center;
+}
+
+.generic-modal-link{
+    color: #007BFF;
+}
+
+.generic-modal-link:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*---- NAVBAR -----*/
+.navbar{
+    position: fixed; /* Make it stick/fixed */
+    top: 0; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.3s;
+    height: 100px;
+    z-index: 1;
+}
+
+.navbar-brand{
+    max-width: 180px;
+    margin-bottom: 15px;
+}
+
+.logo-img{
+    width: 100%;
+}
+
+/* Submenu navbar */
+.dropdown-toggle:hover{
+    cursor: pointer;
+}
+
+.dropdown-submenu {
+    position: relative;
+    list-style: none;
+}
+  
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+.nav-link{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#navbarNavDropdown{
+    background-color: #f8f9fa!important;
+    width: 100%;
+    padding-left: 20px;
+}
+
+/* ----- Background img -----*/
+
+#home-cover{
+    padding-top: 100px;
+}
+.home-background-img{
+    height: 75vh;
+    min-height: 300px;
+    width: 100%;
+    background-image: url('../img/home-background-img.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* WRAPPER */
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+/*----- NOVEDADES -----*/
+#novedades{
+    background-color: rgb(235, 235, 235);
+    width: 80%;
+    height: auto;
+}
+
+.novedades-card-align{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.card-grow { 
+    transition: all .2s ease-in-out; 
+}
+
+.card-grow:hover{
+    transform: scale(1.02);
+}
+
+.date-time{
+    font-size: 14px;
+}
+
+.card-img-top{
+    height: 180px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.all-posts-link{
+    text-align: center;
+    margin-top: 9px;
+    padding-bottom: 12px;
+    
+}
+
+
+/* SIDEBAR */
+.sidebar{
+    width: 20%;
+    max-height: 105vh;
+    overflow-y: scroll;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.side-section{
+    margin-bottom: 10px;
+}
+
+.side-section .section-title{
+    padding-top: 3px;
+}
+
+.horarios-section{
+    margin-bottom: 0;
+}
+
+.tabla-horarios-misa{
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.tabla-horarios-misa table{
+    margin: auto;
+}
+
+.horarios-table-hr{
+    margin-top: 0;
+}
+
+.dias-confesiones{
+    margin-bottom: 0;
+}
+
+.misas-zona p{
+    margin-bottom: 3px;
+}
+
+
+@media (min-width: 992px) { 
+
+    .card-margin-left{
+        margin-left: 30%;
+    }
+
+    .card-margin-right{
+        margin-right: 30%;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .home-background-img{
+        background-position: left;
+        height: 70vh;
+    }
+
+    #novedades{
+        width: 100%;
+    }
+     .wrapper {
+        display: block;
+    }
+
+    .sidebar {
+        width: 85%;
+        margin: auto;
+        overflow-y: scroll;
+        padding: 10px 15px;;
+        max-height: 80vh;
+        border-left: 1px solid rgb(228, 228, 228);
+        border-right: 1px solid rgb(228, 228, 228);
+    }
+}
+/* ----- FOOTER ----- */
+footer{
+    bottom: 0;
+    position: relative;
+}
+
+.footer-distributed{
+    background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+
+	padding: 55px 50px;
+	margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 30%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	margin: 0;
+}
+
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+    color:  #ffffff;
+    font-size: 16px;
+	margin: 20px 0 12px;
+    padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+    color:  inherit;
+}
+
+.footer-distributed .footer-links .escudo-colegiomarin{
+    width: 12.5%;
+    padding-right: 3px;   
+}
+
+.footer-distributed .footer-links .text-colegiomarin:hover{
+    text-decoration: underline;
+}
+
+.footer-distributed{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 34%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 22px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center .fa-whatsapp{
+    font-size: 30px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center .wp-text{
+    font-size: 11px;
+    font-weight: lighter;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 34%;
+}
+
+.footer-distributed .footer-right i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 22px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-right i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-right p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-right p a{
+	color: #ffffff;
+}
+
+.footer-distributed .footer-right p:hover{
+    text-decoration: underline;
+}
+
+/* Login Link */
+.footer-distributed .footer-login-link{
+    position: absolute;
+    bottom: 20px;
+	font-size: 14px;
+	font-weight: normal;
+    margin: 0;
+    padding-top: 30px;
+
+}
+
+.footer-distributed .footer-login-link .login-link{
+    color: #b4b4b4;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 890px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 0px;
+        text-align: left;
+
+	}
+
+    .footer-icons{
+        width: 100%;
+        margin: auto;
+    }
+
+    .footer-distributed .footer-center i,
+    .footer-distributed .footer-right i{
+        margin-left: 0;
+    }
+    
+    .footer-distributed .footer-links .text-colegiomarin{
+        text-decoration: underline;
+        font-weight: normal;
+    }
+
+}
+
+@media (max-width: 355px) {
+    .footer-distributed .footer-center i,
+    .footer-distributed .footer-right i{
+        font-size: 16px !important;
+        margin-right: 2px;
+    }
+
+    .footer-distributed .footer-center p,
+    .footer-distributed .footer-center span,
+    .footer-distributed .footer-right p{
+        font-size: 12px !important;
+    }
+}
+
+
+

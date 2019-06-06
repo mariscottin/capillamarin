@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Capilla Marin | Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/assets/styles/styles_login.css">
+        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicon.ico"> 
+    </head>
+    <body>
+        <div class="container">
+            <form action="/login/validate" method="post" class="form-signin">
+                <a href="/">Volver al Inicio</a>
+                <h2 class="form-signin-heading">Login - Admin</h2>
+                <input type="text" name="username" class="form-control" placeholder="Usuario" required autofocus>
+                <input type="password" name="hash" class="form-control" placeholder="Contraseña" required>
+                <button class="btn btn-lg btn-primary btn-block btn-login" type="submit">Iniciar Sesión</button>
+                <% if(typeof error !== 'undefined') {%>
+                <div class="alert alert-danger" role="alert">
+                    Usuario y/o contraseña incorrecto
+                </div>
+                <% } %>
+            </form>
+        </div> <!-- /container --> 
+    </body>
+</html>

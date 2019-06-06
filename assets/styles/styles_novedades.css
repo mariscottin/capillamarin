@@ -1,0 +1,24 @@
+.card-novedades{
+    width: 80%;
+    max-width: 650px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.card-footer{
+    background-color: rgb(242, 255, 243);
+    padding: 5px 0 5px 20px;
+}
+
+.card-footer p{
+    margin-bottom: 0;
+}
+
+.card-post-link{
+    color: rgb(33, 37,41);
+}
+
+.card-post-link:hover{
+    text-decoration: none;
+    color: rgb(33, 37, 41);
+}

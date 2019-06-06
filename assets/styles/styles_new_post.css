@@ -1,0 +1,40 @@
+body{
+    background-color:  rgb(240, 240, 240);
+}
+
+.back-link{
+    padding: 20px;
+}
+.new-novedad-h1{
+    margin-bottom: 20px;
+}
+
+.container{
+    text-align: center;
+}
+
+.new-form-input{
+    width: 80%;
+    margin: auto;
+}
+
+textarea.new-form-input{
+    height: 200px;
+    resize: none;
+    
+}
+
+.btn{
+    background-color: #1c79dd;
+}
+
+.fa-plus, .fa-pen{
+    font-size: 0.85rem;
+    margin-right: 6px;
+}
+
+@media (min-width: 767px) { 
+    .new-form-input{
+       width: 50%;
+    }
+}

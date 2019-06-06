@@ -1,0 +1,54 @@
+body{
+    background-color: rgb(240, 240, 240);
+}
+
+/* Main page */
+.all-links{
+    padding-top: 60px;
+    margin: auto;
+}
+
+.admin-link{
+    text-align: center;
+    margin: 5px;
+    width: 90%;
+    height: 80px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.card-grow { 
+    transition: all .2s ease-in-out; 
+}
+
+.card-grow:hover{
+    transform: scale(1.06);
+}
+
+.icon-text{
+    text-align: center;
+    color: #343a40;
+}
+
+.icon-text p{
+    padding: 0;
+    margin: 0;
+}
+
+.icon-text p i{
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.icon-text:hover{
+    text-decoration: none;
+    color: black;
+}
+
+
+@media(max-width: 767px) {
+    .all-links{
+        padding-top: 20px;
+    }
+}

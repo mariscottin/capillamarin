@@ -1,0 +1,29 @@
+/* GENERICO*/
+.section-main-title{
+    text-align: center;
+    padding-top: 115px;
+    padding-bottom: 30px;
+}
+.center-carousel{
+    text-align: center;
+
+}
+.section-carousel img{
+   width: 100% !important;
+}
+
+/* NOSOTROS */
+.organigrama-center{
+    text-align: center;
+}
+
+.organigrama{
+    width: 80%;
+    max-width: 400px;
+}
+
+/* MATRIMONIOS */
+
+.matrimonios-requisitos-modal-body{
+    padding: 15px;
+}

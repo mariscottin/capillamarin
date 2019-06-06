@@ -1,0 +1,67 @@
+body{
+    background-color:  rgb(240, 240, 240);
+}
+
+.wrapper{
+    text-align: center;
+}
+
+.back-link{
+    padding: 20px;
+}
+
+.alert-success{
+    width: 60%;
+    margin: auto;
+}
+
+.close-alert{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    margin: 0;
+    line-height: 0.5rem;
+    color: rgb(0, 70, 0);
+    cursor: pointer;
+}
+
+.new-post-link{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background-color: #1c79dd;
+}
+
+.table-icon, .table-icon a{
+    color: #333;
+    transition: all 0.2s;
+    margin: 0;
+}
+
+.table-icon:hover, .table-icon a{
+    cursor:pointer;
+}
+
+.delete-icon:hover{
+    color: rgb(255, 57, 57);
+}
+
+.edit-icon:hover a{
+    color:rgb(0, 174, 255);
+}
+
+.table-img{
+    width:30px;
+}
+
+.table-img{
+    cursor: pointer;
+}
+
+.modal-body{
+    font-weight: 400;
+}
+
+.modal-img{
+    width: 80%;
+}
