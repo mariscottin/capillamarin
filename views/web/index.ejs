@@ -97,8 +97,10 @@
                 <div class="container">
                     <h1 class="section-title">Novedades</h1>
                     <div class="row novedades-align">
+                        <%console.log(posts)%>
                         <%for(let i=0; i<3; i++) {%>
                         <div class="col-md novedades-card-align">
+                        <%console.log(post[1])%>
                             <div class="card card-grow" style="width: 18rem;">
                                 <div class="card-img-top" style="background-image: url('<%=posts[i].img_url%>')"></div>
                                 <div class="card-body">
