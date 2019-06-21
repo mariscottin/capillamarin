@@ -97,45 +97,21 @@
                 <div class="container">
                     <h1 class="section-title">Novedades</h1>
                     <div class="row novedades-align">
+                        <%for(let i=0; i<3; i++) {%>
                         <div class="col-md novedades-card-align">
                             <div class="card card-grow" style="width: 18rem;">
-                                <div class="card-img-top" style="background-image: url('/assets/img/novedades-test/novedades-1.jpeg')"></div>
+                                <div class="card-img-top" style="background-image: url('<%=posts[i].img_url%>')"></div>
                                 <div class="card-body">
-                                    <h5 class="card-title">Retiro Oportunidad</h5>
-                                    <p class="card-text">Nuevas Fechas! El 11/6 arranca un nuevo Retiro Oportunidad. Anotate!</p>
+                                    <h5 class="card-title"><%=posts[i].title%></h5>
+                                    <p class="card-text"><%-posts[i].body%></p>
                                 </div>
                                 <div class="card-footer">
-                                    <p class="date-time">6/6/2019 - 11:42am</p>
-                                    <%# <a href="#">Sección</a>   %>
+                                    <p class="date-time"><%=posts[i].date%> - <%=posts[i].time%></p>
+                                    <a href="#">Sección</a>  
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md novedades-card-align">
-                            <div class="card card-grow" style="width: 18rem;">
-                                <div class="card-img-top" style="background-image: url('/assets/img/novedades-test/novedades-2.jpeg')"></div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Retiro Entretiempo</h5>
-                                    <p class="card-text">El domingo pasado terminamos el Retiro Entretiempo! Qué lindo que estuvo!</p>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="date-time">5/6/2019 - 13:21pm</p>
-                                    <%# <a href="#">Sección</a>   %>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md novedades-card-align">
-                            <div class="card card-grow" style="width: 18rem;">
-                                <div class="card-img-top" style="background-image: url('/assets/img/novedades-test/novedades-3.jpeg')"></div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Catequesis en la Cava</h5>
-                                    <p class="card-text">Próximamente les vamos a estar anunciando cuándo comienza!</p>
-                                </div>
-                                <div class="card-footer">
-                                    <p class="date-time">3/6/2019 - 18:54pm</p>
-                                    <%# <a href="#">Sección</a>   %>
-                                </div>
-                            </div>
-                        </div>
+                        <% } %>
                     </div>
                 </div>
             </section>
