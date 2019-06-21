@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
       table.string('title');
       table.text('body');
       table.text('img_url');
+      table.string('section');
       table.integer('user_id')
             .references('id')
             .inTable('users')
