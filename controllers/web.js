@@ -18,7 +18,7 @@ module.exports = {
                 post.time = time;
             })
 
-            res.render('./web/index'), {posts: threePosts}
+            res.render('./web/index', {posts: threePosts})
         })
     },
 
