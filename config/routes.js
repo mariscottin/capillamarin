@@ -69,11 +69,7 @@ module.exports = (app) => {
     app.get('/login', users.login);
 
     app.post('/login/validate', users.validate);
-
-    //REGISTER
-    //DELETE ON PRODUCTION
-    app.post('/register', users.register);
-    
+   
 
     //----Auth Middleware----
     app.use(authMiddleware);

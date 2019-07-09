@@ -35,25 +35,4 @@ module.exports = {
     admin: (req, res) => {
         res.render('./admin/admin')
     },
-
-    //CREATE NEW USER USING POSTMAN
-    //DELETE ON PRODUCTIONs
-    register: (req, res) => {
-        const {username, first_name, last_name, email, password} = req.body;
-        bcrypt.genSalt(saltRounds, function(err, salt) {
-            bcrypt.hash(password, salt, function(err, hash) {
-                // Store hash in your password DB.
-                knex('users').insert({
-                    username,
-                    first_name,
-                    last_name,
-                    email,
-                    hash
-                })
-                .then(()=> res.redirect('/'))
-                .catch(err=> console.log(err))
-            });
-        });
-        
-    }
 }
