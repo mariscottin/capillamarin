@@ -9,7 +9,7 @@ module.exports = (app) => {
     });
 
     app.use(session({
-        secret: 'keyboard cat',
+        secret: process.env.SECRET_SESSION,
         cookie: {
             maxAge: 300000 //5 mins for testing
         },
