@@ -22,7 +22,7 @@ submit.addEventListener('click', (e)=> {
           'Content-Type': 'multipart/form-data'
         }
       }).then(response => {
-        image.src = response.data.Location;
+        console.log(response);
 
       }).catch(error => {
         console.log(error);
