@@ -46,17 +46,19 @@ app.post('/posts', (request, response) => {
       form.parse(request, async (error, fields, files) => {
         if (error) throw new Error(error);
         try {
-          const path = files.file[0].path;
-          const buffer = fs.readFileSync(path);
-          const type = fileType(buffer);
-          const timestamp = Date.now().toString();
-          const fileName = `bucketFolder/${timestamp}-lg`;
-          const data = await uploadFile(buffer, fileName, type);
-          return response.status(200).send(data);
+            console.log(files);
+            const path = files.file[0].path;
+            const buffer = fs.readFileSync(path);
+            const type = fileType(buffer);
+            const timestamp = Date.now().toString();
+            const fileName = `bucketFolder/${timestamp}-lg`;
+            const data = await uploadFile(buffer, fileName, type);
+            return response.status(200).send(data);
         } catch (error) {
-          return response.status(400).send(error);
+            return response.status(400).send(error);
         }
       });
+    
   });
 
 
