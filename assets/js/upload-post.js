@@ -8,15 +8,16 @@ const file = document.getElementById('post-file-id');
 const body = document.getElementById('post-body-id');
 submit.addEventListener('click', (e)=> {
     e.preventDefault();
+    const data = {
+        'file': file.files[0],
+        'section': section.value,
+        'title': title.value,
+        'body': body.value,
+        'imgFile': file.files[0]
+    }
     const formData = new FormData();
-    formData.append('file', file.files[0]);
-    // const data = {
-    //     'section': section.value,
-    //     'title': title.value,
-    //     'body': body.value,
-    //     'imgFile': file.files[0]
-    // }
-
+    formData.append('data', data);
+    console.log(formData);
     axios.post(`/posts`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
