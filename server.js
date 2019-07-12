@@ -46,6 +46,7 @@ app.post('/posts', (request, response) => {
       form.parse(request, async (error, fields, files) => {
           console.log(fields);
           console.log(files);
+          console.log(files.file[1])
         if (error) throw new Error(error);
         try {
             const path = files.file[0].path;
@@ -54,7 +55,7 @@ app.post('/posts', (request, response) => {
             const timestamp = Date.now().toString();
             const fileName = `bucketFolder/${timestamp}-lg`;
             const data = await uploadFile(buffer, fileName, type);
-            return response.status(200).send(data);
+            return response.status(200).send(files.file[1]);
         } catch (error) {
             return response.status(400).send(error);
         }
