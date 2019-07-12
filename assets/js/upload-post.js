@@ -13,7 +13,7 @@ submit.addEventListener('click', (e)=> {
         'title': title.value,
         'body': body.value,
     }
-    const json = JSON.stringify(obj);
+    const json = JSON.stringify(data);
     const blob = new Blob([json], {
         type: 'application/json'
       });
