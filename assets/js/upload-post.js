@@ -14,6 +14,7 @@ submit.addEventListener('click', (e)=> {
         'title': title.value,
         'body': body.value,
     }
+    console.log(data);
     const formData = new FormData();
     formData.append('file', file.files[0]);
     console.log(formData);
