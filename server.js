@@ -42,6 +42,7 @@ const uploadFile = (buffer, name, type) => {
 
 // Define POST route
 app.post('/posts', (request, response) => {
+    console.log(request);
     const form = new multiparty.Form();
       form.parse(request, async (error, fields, files) => {
           console.log(files);
@@ -54,7 +55,7 @@ app.post('/posts', (request, response) => {
             const timestamp = Date.now().toString();
             const fileName = `bucketFolder/${timestamp}-lg`;
             const data = await uploadFile(buffer, fileName, type);
-            return response.status(200).send(files.file[1]);
+            return response.status(200).send(data);
         } catch (error) {
             return response.status(400).send(error);
         }

@@ -7,30 +7,37 @@ const file = document.getElementById('post-file-id');
 const body = document.getElementById('post-body-id');
 submit.addEventListener('click', (e)=> {
     e.preventDefault();
+
     const data = {
         'section': section.value,
         'title': title.value,
         'body': body.value,
-    }
+    };
+
     const json = JSON.stringify(data);
     const blob = new Blob([json], {
         type: 'application/json'
       });
+
     console.log(data);
+
     const formData = new FormData();
     formData.append('file', file.files[0]);
     formData.append('data', blob);
+
     console.log(formData);
 
     axios({
         method: 'post',
         url: '/posts',
         data: formData,
-      })
+    })
+
     // axios.post(`/posts`, formData, {
     //     headers: {
     //       'Content-Type': 'multipart/form-data'
     //     }
+    
      .then(response => {
         console.log(response);
 
