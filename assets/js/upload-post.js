@@ -2,7 +2,6 @@
 //IMAGE UPLOAD
 const submit = document.getElementById('submit-post-upload');
 const section = document.getElementById('post-section-id');
-// const section = dropdown.options[dropdown.selectedIndex].value;
 const title = document.getElementById('post-title-id');
 const file = document.getElementById('post-file-id');
 const body = document.getElementById('post-body-id');
@@ -22,11 +21,17 @@ submit.addEventListener('click', (e)=> {
     formData.append('file', file.files[0]);
     formData.append('data', blob);
     console.log(formData);
-    axios.post(`/posts`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }).then(response => {
+
+    axios({
+        method: 'post',
+        url: '/posts',
+        data: formData,
+      })
+    // axios.post(`/posts`, formData, {
+    //     headers: {
+    //       'Content-Type': 'multipart/form-data'
+    //     }
+     .then(response => {
         console.log(response);
 
       }).catch(error => {
