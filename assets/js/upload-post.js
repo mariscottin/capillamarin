@@ -15,7 +15,8 @@ submit.addEventListener('click', (e)=> {
     }
     console.log(data);
     const formData = new FormData();
-    formData.append('file', file.files[0], data);
+    formData.append('file', file.files[0]);
+    formData.append('data', data);
     console.log(formData);
     axios.post(`/posts`, formData, {
         headers: {
