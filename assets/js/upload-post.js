@@ -13,10 +13,14 @@ submit.addEventListener('click', (e)=> {
         'title': title.value,
         'body': body.value,
     }
+    const json = JSON.stringify(obj);
+    const blob = new Blob([json], {
+        type: 'application/json'
+      });
     console.log(data);
     const formData = new FormData();
     formData.append('file', file.files[0]);
-    formData.append('data', data);
+    formData.append('data', blob);
     console.log(formData);
     axios.post(`/posts`, formData, {
         headers: {
