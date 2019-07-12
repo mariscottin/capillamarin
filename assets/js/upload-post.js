@@ -10,7 +10,7 @@ submit.addEventListener('click', (e)=> {
     e.preventDefault();
     const data = {
         'file': file.files[0],
-        'section': section.value,
+        // 'section': section.value,
         'title': title.value,
         'body': body.value,
         'imgFile': file.files[0]
