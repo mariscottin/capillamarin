@@ -26,21 +26,21 @@ module.exports = {
         res.render('./admin/new_post');
     },
 
-    create: (req, res)=>{
-        // const form = new multiparty.Form();
-        console.log(req);
-        console.log(form);
-        knex('posts').insert({
-            title: req.body.title,
-            body: req.body.body,
-            img_url: req.body.img_url,
-            user_id: 1, //Hardcoded
-            date: new Date()
+    // create: (req, res)=>{
+    //     // const form = new multiparty.Form();
+    //     console.log(req);
+    //     console.log(form);
+    //     knex('posts').insert({
+    //         title: req.body.title,
+    //         body: req.body.body,
+    //         img_url: req.body.img_url,
+    //         user_id: 1, //Hardcoded
+    //         date: new Date()
 
-        })
-        .then(() => res.redirect('/admin/posts?alert=Novedad%20creada%20con%20exito'))
-        .catch(err=> console.log('could not add post: ' + err))
-    },
+    //     })
+    //     .then(() => res.redirect('/admin/posts?alert=Novedad%20creada%20con%20exito'))
+    //     .catch(err=> console.log('could not add post: ' + err))
+    // },
 
     delete: (req, res)=> {
         knex('posts').where('id', req.params.id).del()
