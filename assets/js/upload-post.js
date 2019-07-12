@@ -1,7 +1,7 @@
 
 //IMAGE UPLOAD
 const submit = document.getElementById('submit-post-upload');
-// const section = document.getElementById('post-section-id');
+const section = document.getElementById('post-section-id');
 // const section = dropdown.options[dropdown.selectedIndex].value;
 const title = document.getElementById('post-title-id');
 const file = document.getElementById('post-file-id');
@@ -10,13 +10,12 @@ submit.addEventListener('click', (e)=> {
     e.preventDefault();
     const data = {
         'file': file.files[0],
-        // 'section': section.value,
+        'section': section.value,
         'title': title.value,
         'body': body.value,
-        'imgFile': file.files[0]
     }
     const formData = new FormData();
-    formData.append('data', data);
+    formData.append('file', file.files[0]);
     console.log(formData);
     axios.post(`/posts`, formData, {
         headers: {
