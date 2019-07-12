@@ -42,12 +42,11 @@ const uploadFile = (buffer, name, type) => {
 
 // Define POST route
 app.post('/posts', (request, response) => {
-    console.log(request);
     const form = new multiparty.Form();
+    console.log(form);
       form.parse(request, async (error, fields, files) => {
         if (error) throw new Error(error);
         try {
-            console.log(files);
             const path = files.file[0].path;
             const buffer = fs.readFileSync(path);
             const type = fileType(buffer);
