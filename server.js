@@ -45,7 +45,10 @@ app.post('/posts', (request, response) => {
     const form = new multiparty.Form();
     
       form.parse(request, async (error, fields, files) => {
-        console.log(request);
+        form.on('part', (part) => {
+          console.log(part);
+        })
+        
         if (error) throw new Error(error);
         try {
             const path = files.file[0].path;
