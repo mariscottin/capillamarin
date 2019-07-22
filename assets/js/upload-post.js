@@ -26,6 +26,7 @@ submit.addEventListener('click', (e)=> {
     formData.append('data', blob);
 
     console.log(formData);
+    console.log(formData.get('section'));
 
     axios({
         method: 'post',
