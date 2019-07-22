@@ -39,7 +39,7 @@ submit.addEventListener('click', (e)=> {
     //     }
     
      .then(response => {
-        console.log(response.config.data.FormData.get('section'));
+        console.log(response);
 
       }).catch(error => {
         console.log(error);
