@@ -43,7 +43,6 @@ const uploadFile = (buffer, name, type) => {
 // Define POST route
 app.post('/posts', (request, response) => {
     const form = new multiparty.Form();
-    console.log(form);
       form.parse(request, async (error, fields, files) => {
         if (error) throw new Error(error);
         try {
