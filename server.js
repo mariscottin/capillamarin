@@ -47,6 +47,7 @@ app.post('/posts', (request, response) => {
       form.parse(request, async (error, fields, files) => {
         if (error) throw new Error(error);
         try {
+            console.log(fields);
             const path = files.file[0].path;
             const buffer = fs.readFileSync(path);
             const type = fileType(buffer);
