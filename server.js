@@ -42,18 +42,13 @@ const uploadFile = (buffer, name, type) => {
 
 // Define POST route
 app.post('/posts', (request, response) => {
-    const form = new multiparty.Form();
-    let fields = [];
-    form.on('field', function(name, val){
-      fields.push('"' +name+ '"'+ ':'+'"'+val+'"')
-    });
-    console.log(fields);
-    
+      
+    const form = new multiparty.Form();    
       form.parse(request, async (error, fields, files) => {
-
         if (error) throw new Error(error);
         try {
             const path = files.file[0].path;
+            const fieldsPath = file.files[1].path;
             const buffer = fs.readFileSync(path);
             const type = fileType(buffer);
             const timestamp = Date.now().toString();
