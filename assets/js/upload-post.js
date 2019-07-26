@@ -1,7 +1,7 @@
 
 //IMAGE UPLOAD
 const submit = document.getElementById('submit-post-upload');
-// const section = document.getElementById('post-section-id');
+const section = document.getElementById('post-section-id');
 // const title = document.getElementById('post-title-id');
 // const file = document.getElementById('post-file-id');
 // const body = document.getElementById('post-body-id');
@@ -12,6 +12,7 @@ submit.addEventListener('click', (e)=> {
   e.preventDefault();
   
   let formData = new FormData(newPostForm);
+  formData.append('section', section);
     // const data = {
     //     'section': section.value,
     //     'title': title.value,
