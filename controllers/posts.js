@@ -80,7 +80,7 @@ const uploadFile = (buffer, name, type) => {
                     date: new Date(),
                     section: fieldsSection
                     })
-                    .then(() => res.redirect('/admin/posts?alert=Novedad%20creada%20con%20exito'))
+                    .then(() => response.redirect('/admin/posts?alert=Novedad%20creada%20con%20exito'))
                     .catch(err=> console.log('could not add post: ' + err))
             } catch (error) {
                 return response.status(400).send(error);
