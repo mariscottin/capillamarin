@@ -49,7 +49,7 @@ app.post('/posts', (request, response) => {
         console.log(files);
         if (error) throw new Error(error);
         try {
-            const path = files.file[0].path;
+            const path = files.fileName[0].path;
             const buffer = fs.readFileSync(path);
             const type = fileType(buffer);
             const timestamp = Date.now().toString();
