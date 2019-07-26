@@ -85,7 +85,7 @@ module.exports = (app) => {
     
     app.get('/admin/posts/new', posts.new);
     
-    // app.post('/posts', posts.create);
+    app.post('/posts', posts.create);
 
     app.get('/post/edit/:id', posts.editShow);
 
