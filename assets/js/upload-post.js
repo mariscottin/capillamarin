@@ -12,7 +12,7 @@ submit.addEventListener('click', (e)=> {
   e.preventDefault();
   
   let formData = new FormData(newPostForm);
-  formData.append('section', section);
+  formData.append('section', section.value);
     // const data = {
     //     'section': section.value,
     //     'title': title.value,
