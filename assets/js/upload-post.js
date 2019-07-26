@@ -6,9 +6,7 @@ const title = document.getElementById('post-title-id');
 const file = document.getElementById('post-file-id');
 const body = document.getElementById('post-body-id');
 submit.addEventListener('click', (e)=> {
-    e.preventDefault();
-
-    const data = {
+  const data = {
         'section': section.value,
         'title': title.value,
         'body': body.value,
