@@ -78,8 +78,9 @@ const uploadFile = (buffer, name, type) => {
                     date: new Date(),
                     section: fieldsSection
                     })
-                    .then(() => window.location.assign('/admin/posts?alert=Novedad%20creada%20con%20exito'))
+                    .then(() => console.log('sent!'))
                     .catch(err=> console.log('could not add post: ' + err))
+                return response.status(400).send(data)
             } catch (error) {
                 return response.status(400).send(error);
             }
