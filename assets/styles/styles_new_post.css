@@ -37,13 +37,6 @@ textarea.new-form-input{
     margin-right: 6px;
 }
 
-.loading-text{
-    font-size: 18px;
-    font-weight: bold;
-    
-    display: none;
-}
-
 @media (min-width: 767px) { 
     .new-form-input{
        width: 50%;

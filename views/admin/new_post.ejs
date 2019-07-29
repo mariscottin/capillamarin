@@ -48,11 +48,12 @@
                     <br>
                     <br>
                     <textarea placeholder="Escribir novedad..." name="body" id="post-body-id" class="form-control new-form-input" required></textarea> 
-                    <div class="loading-text">
-                        Cargando...            
-                    </div>
                     <br>
                     <button type="submit" id="submit-post-upload" class="btn btn-md btn-primary"><i class="fas fa-plus"></i>Crear</button>
+                    <button class="btn btn-primary" id="loading-btn" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Cargando...
+                    </button>
                 </form> 
             </div>
             
