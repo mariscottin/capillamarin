@@ -14,23 +14,27 @@ submit.addEventListener('click', (e)=> {
   console.log(postImage.value);
   console.log(postBody.value);
 
-  submit.style.display = 'none';
-  loadingBtn.style.display = 'block';
-  let formData = new FormData(newPostForm);
-  formData.append('section', section.value);
-
-  axios({
-        method: 'post',
-        url: '/posts',
-        data: formData,
-    })
-     .then(response => {
-        console.log(response);
-        if(response){
-          window.location = '/admin/posts?alert=Novedad%20creada%20con%20exito';
-        }
-
-      }).catch(error => {
-        console.log(error);
-      });
+  if(section.value = "default" || postTitle.value === "" || postImage.value === "" || postBody.value === ""){
+    alert('Por favor, completar todos los campos');
+  }else{
+    submit.style.display = 'none';
+    loadingBtn.style.display = 'block';
+    let formData = new FormData(newPostForm);
+    formData.append('section', section.value);
+  
+    axios({
+          method: 'post',
+          url: '/posts',
+          data: formData,
+      })
+       .then(response => {
+          console.log(response);
+          if(response){
+            window.location = '/admin/posts?alert=Novedad%20creada%20con%20exito';
+          }
+  
+        }).catch(error => {
+          console.log(error);
+        });
+  }
 });
