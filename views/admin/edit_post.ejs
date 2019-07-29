@@ -15,16 +15,46 @@
         </nav>
         <a href="/admin/posts" class="back-link">Atrás</a>
         <div class="container">
-            <h1 class="new-novedad-h1">Editar Novedad</h1>
-            <form action="/post/edit/<%=post.id%>" method='post' class="new-form">
-                <input type="text" name="title" value="<%=post.title%>" class="title form-control new-form-input" required autofocus>
-                <br>
-                <input type="text" name="img_url" value="<%=post.img_url%>" class="form-control new-form-input" required>
-                <br>
-                <textarea name="body" class="form-control new-form-input" required><%=post.body%></textarea> 
-                <br>
-                <button type="submit" class="btn btn-md btn-primary"><i class="fas fa-pen"></i>Editar</button>
-            </form>
+            <h1 class="new-novedad-h1">Crear Novedad</h1>
+            <div class="new-form-container">
+                <form action="/post/edit/<%=post.id%>" method="post" class="new-form" id="new-post-form" name="Seleccionar Categoría" autofocus>
+                    <select class="form-control new-form-input" id="post-section-id">
+                        <option value="Matrimonios">|Serv para la Com.| Matrimonios</option>
+                        <option value="Bautismos">|Serv para la Com.| Bautismos</option>
+                        <option value="Visitas a Enfermos">|Serv para la Com.| Visitas a enfermos</option>
+                        <option value="Adoración">|Esp y Form.| Adoración</option>
+                        <option value="Equipo Organizador">|Esp y Form. - Liturgia| Equipo Organizador</option>
+                        <option value="Equipo de Ministros">|Esp y Form. - Liturgia| Equipo de Ministros</option>
+                        <option value="Coro">|Esp y Form. - Liturgia| Coro</option>
+                        <option value="Sacristanes">|Esp y Form. - Liturgia| Sacristanes</option>
+                        <option value="Charlas Universitarias">|Esp y Form. - Char. y Ret.| Charlas Universitarias</option>
+                        <option value="Charlas Abiertas">|Esp y Form. - Char. y Ret.| Charlas Abiertas</option>
+                        <option value="Entretiempo">|Esp y Form. - Char. y Ret.| Entretiempo</option>
+                        <option value="Oportunidad">|Esp y Form. - Char. y Ret.| Oportunidad</option>
+                        <option value="Retiros Comunitarios">|Esp y Form. - Char. y Ret.| Retiros Comunitarios</option>
+                        <option value="Confirmación">|Jóvenes| Confirmación</option>
+                        <option value="Post Confirmación">|Jóvenes| Post Confirmación</option>
+                        <option value="Universitarios">|Jóvenes| Universitarios</option>
+                        <option value="Misión">|Jóvenes| Misión</option>
+                        <option value="Cáritas">|Inic. Solidarias| Cáritas</option>
+                        <option value="Proyectos de la Comunidad">|Inic. Solidarias| Proyectos de la Comunidad</option>
+                    </select>
+                    <br>
+                    <input type="text" name="title" placeholder="Título" id="post-title-id" class="title form-control new-form-input" required autofocus>
+                    <br>
+                    <input type="file" id="post-file-id" class="new-form-input form-control-file" name="fileName" accept="image/*">
+                    <br>
+                    <br>
+                    <textarea placeholder="Escribir novedad..." name="body" id="post-body-id" class="form-control new-form-input" required></textarea> 
+                    <br>
+                    <button type="submit" id="submit-post-upload" class="btn btn-md btn-primary"><i class="fas fa-plus"></i>Crear</button>
+                    <button class="btn btn-primary" id="loading-btn" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Cargando...
+                    </button>
+                </form> 
+            </div>
+            
         </div>
     </body>
 </html>
