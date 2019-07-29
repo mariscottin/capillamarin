@@ -1,7 +1,7 @@
 //IMAGE UPLOAD
 const submit = document.getElementById('submit-post-upload');
 const section = document.getElementById('post-section-id');
-const loadingBtn = document.getElementById('.loading-btn');
+const loadingBtn = document.getElementById('loading-btn');
 let newPostForm = document.getElementById('new-post-form');
 
 submit.addEventListener('click', (e)=> {
