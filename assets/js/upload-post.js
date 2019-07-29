@@ -15,7 +15,9 @@ submit.addEventListener('click', (e)=> {
         data: formData,
     })
      .then(response => {
-        console.log(response);
+        if(response){
+          window.location = '/admin/posts?alert=Novedad%20creada%20con%20exito';
+        };
 
       }).catch(error => {
         console.log(error);
