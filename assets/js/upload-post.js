@@ -16,6 +16,9 @@ submit.addEventListener('click', (e)=> {
     })
      .then(response => {
         console.log(response);
+        if(response){
+          window.location = '/admin';
+        }
 
       }).catch(error => {
         console.log(error);
