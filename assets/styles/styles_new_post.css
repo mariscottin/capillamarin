@@ -31,9 +31,12 @@ textarea.new-form-input{
 .btn{
     background-color: #1c79dd;
 }
-
-#loading-btn{
+#submit-post-upload{
     display: none;
+}
+#loading-btn{
+    text-align: center;
+    display: block;
 }
 
 .fa-plus, .fa-pen{
