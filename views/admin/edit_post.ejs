@@ -17,8 +17,9 @@
         <div class="container">
             <h1 class="new-novedad-h1">Crear Novedad</h1>
             <div class="new-form-container">
-                <form action="/post/edit/<%=post.id%>" method="post" class="new-form" id="new-post-form" name="Seleccionar Categoría" autofocus>
+                <form action="/post/edit/<%=post.id%>" method="post" class="new-form" id="new-post-form">
                     <select class="form-control new-form-input" id="post-section-id">
+                        <option value="default">Seleccionar categoría</option>
                         <option value="Matrimonios">|Serv para la Com.| Matrimonios</option>
                         <option value="Bautismos">|Serv para la Com.| Bautismos</option>
                         <option value="Visitas a Enfermos">|Serv para la Com.| Visitas a enfermos</option>
