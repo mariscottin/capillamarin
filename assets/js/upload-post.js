@@ -9,10 +9,10 @@ let newPostForm = document.getElementById('new-post-form');
 
 submit.addEventListener('click', (e)=> {
   e.preventDefault();
-  console.log(postTitle);
-  console.log(postImage);
-  console.log(postBody);
-  
+  console.log(postTitle.value);
+  console.log(postImage.value);
+  console.log(postBody.value);
+
   submit.style.display = 'none';
   loadingBtn.style.display = 'block';
   let formData = new FormData(newPostForm);
