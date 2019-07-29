@@ -15,7 +15,7 @@ submit.addEventListener('click', (e)=> {
         data: formData,
     })
      .then(response => {
-        console.log("Woho!");
+        console.log(response);
 
       }).catch(error => {
         console.log(error);
