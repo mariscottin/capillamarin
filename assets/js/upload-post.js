@@ -9,6 +9,7 @@ let newPostForm = document.getElementById('new-post-form');
 
 submit.addEventListener('click', (e)=> {
   e.preventDefault();
+  console.log(section.value);
   console.log(postTitle.value);
   console.log(postImage.value);
   console.log(postBody.value);
