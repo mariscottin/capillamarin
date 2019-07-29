@@ -6,7 +6,7 @@ let newPostForm = document.getElementById('new-post-form');
 
 submit.addEventListener('click', (e)=> {
   e.preventDefault();
-  loadingText.style.display = 'block';
+  loadingText.style.display = 'inline-block';
   let formData = new FormData(newPostForm);
   formData.append('section', section.value);
 
