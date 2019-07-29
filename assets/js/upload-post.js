@@ -16,7 +16,8 @@ submit.addEventListener('click', (e)=> {
     })
      .then(response => {
         if(response){
-          window.location = '/admin/posts?alert=Novedad%20creada%20con%20exito';
+          console.log('got to here!!');
+          window.location.assign('/admin/posts?alert=Novedad%20creada%20con%20exito');
         };
 
       }).catch(error => {
