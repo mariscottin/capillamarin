@@ -68,7 +68,7 @@
                                 <span class="table-icon edit-icon"><a href="/post/edit/<%=posts[i].id%>"><i class="fas fa-pen"></a></i></span>
                             </th>
                             <td><%=posts[i].date%></td>
-                            <td>Sección</td>
+                            <td><%=posts[i].section%></td>
                             <td><%=posts[i].title%></td>
                             <td><%=posts[i].body%></td>
                             <td data-toggle="modal" data-target="#imgModal_<%=posts[i].id%>"><img src="<%=posts[i].img_url%>" alt="Img_<%=posts[i].title%>" class="table-img"></td>
