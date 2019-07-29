@@ -14,7 +14,7 @@ submit.addEventListener('click', (e)=> {
   console.log(postImage.value);
   console.log(postBody.value);
 
-  if(section.value = "default" || postTitle.value === "" || postImage.value === "" || postBody.value === ""){
+  if(section.value === "default" || postTitle.value === "" || postImage.value === "" || postBody.value === ""){
     alert('Por favor, completar todos los campos');
   }else{
     submit.style.display = 'none';
