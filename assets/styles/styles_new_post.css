@@ -32,6 +32,10 @@ textarea.new-form-input{
     background-color: #1c79dd;
 }
 
+.loading-btn{
+    display: none;
+}
+
 .fa-plus, .fa-pen{
     font-size: 0.85rem;
     margin-right: 6px;
