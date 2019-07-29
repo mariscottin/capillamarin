@@ -80,7 +80,7 @@ const uploadFile = (buffer, name, type) => {
                     date: new Date(),
                     section: fieldsSection
                     })
-                    .then(() => alert('Novedad subida con éxito!'))
+                    .then(() => response.redirect('/admin/posts?alert=Novedad%creada%20con%20exito')) //NO FUNCIONA!!!
                     .catch(err=> console.log('could not add post: ' + err))
             } catch (error) {
                 return response.status(400).send(error);
@@ -88,21 +88,6 @@ const uploadFile = (buffer, name, type) => {
         })
 
     },
-    // create: (req, res)=>{
-    //     // const form = new multiparty.Form();
-    //     console.log(req);
-    //     console.log(form);
-    //     knex('posts').insert({
-    //         title: req.body.title,
-    //         body: req.body.body,
-    //         img_url: req.body.img_url,
-    //         user_id: 1, //Hardcoded
-    //         date: new Date()
-
-    //     })
-    //     .then(() => res.redirect('/admin/posts?alert=Novedad%20creada%20con%20exito'))
-    //     .catch(err=> console.log('could not add post: ' + err))
-    // },
 
     delete: (req, res)=> {
         knex('posts').where('id', req.params.id).del()
