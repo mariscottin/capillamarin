@@ -80,7 +80,7 @@ const uploadFile = (buffer, name, type) => {
                     })
                     .then(() => console.log('sent!'))
                     .catch(err=> console.log('could not add post: ' + err))
-                return response.status(400).send(data)
+                return response.status(200).send(data)
             } catch (error) {
                 return response.status(400).send(error);
             }
