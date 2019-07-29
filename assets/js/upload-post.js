@@ -14,13 +14,11 @@ submit.addEventListener('click', (e)=> {
         url: '/posts',
         data: formData,
     })
-     .then(response => {
-        if(response){
+     .then(() => {
           console.log('got to here!!');
           window.location.assign('/admin/posts?alert=Novedad%20creada%20con%20exito');
-        };
-
-      }).catch(error => {
+      })
+      .catch(error => {
         console.log(error);
       });
 });
