@@ -1,11 +1,18 @@
 //IMAGE UPLOAD
 const submit = document.getElementById('submit-post-upload');
 const section = document.getElementById('post-section-id');
+const postTitle = document.getElementById('post-title-id');
+const postImage = document.getElementById('post-file-id');
+const postBody = document.getElementById('post-body-id');
 const loadingBtn = document.getElementById('loading-btn');
 let newPostForm = document.getElementById('new-post-form');
 
 submit.addEventListener('click', (e)=> {
   e.preventDefault();
+  console.log(postTitle);
+  console.log(postImage);
+  console.log(postBody);
+  
   submit.style.display = 'none';
   loadingBtn.style.display = 'block';
   let formData = new FormData(newPostForm);
