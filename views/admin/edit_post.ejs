@@ -17,7 +17,7 @@
         <div class="container">
             <h1 class="new-novedad-h1">Crear Novedad</h1>
             <div class="new-form-container">
-                <form action="/post/edit/<%=post.id%>" method="post" class="new-form" id="new-post-form">
+                <form action="/post/edit/<%=post.id%>" method="post" class="new-form" id="new-post-form" autofocus required>
                     <select class="form-control new-form-input" id="post-section-id">
                         <option value="default">Seleccionar categoría</option>
                         <option value="Matrimonios">|Serv para la Com.| Matrimonios</option>
@@ -41,9 +41,9 @@
                         <option value="Proyectos de la Comunidad">|Inic. Solidarias| Proyectos de la Comunidad</option>
                     </select>
                     <br>
-                    <input type="text" name="title" placeholder="Título" id="post-title-id" class="title form-control new-form-input" required autofocus>
+                    <input type="text" name="title" placeholder="Título" id="post-title-id" class="title form-control new-form-input" required>
                     <br>
-                    <input type="file" id="post-file-id" class="new-form-input form-control-file" name="fileName" accept="image/*">
+                    <input type="file" id="post-file-id" class="new-form-input form-control-file" name="fileName" accept="image/*" required>
                     <br>
                     <br>
                     <textarea placeholder="Escribir novedad..." name="body" id="post-body-id" class="form-control new-form-input" required></textarea> 
