@@ -17,40 +17,44 @@
         <a href="/admin/posts" class="back-link">Atrás</a>
         <div class="container">
             <h1 class="new-novedad-h1">Crear Novedad</h1>
-            
-            <form class="new-form" id="new-post-form">
-                <select class="form-control new-form-input" id="post-section-id">
-                    <option value="default" name="default">Seleccionar categoría</option>
-                    <option value="matrimonios" name="matrimonios">|Serv para la Com.| Matrimonios</option>
-                    <option value="bautismos">|Serv para la Com.| Bautismos</option>
-                    <option value="visitas-a-enfermos">|Serv para la Com.| Visitas a enfermos</option>
-                    <option value="adoracion">|Esp y Form.| Adoración</option>
-                    <option value="equipo-organizador">|Esp y Form. - Liturgia| Equipo Organizador</option>
-                    <option value="equipo-de-ministros">|Esp y Form. - Liturgia| Equipo de Ministros</option>
-                    <option value="coro">|Esp y Form. - Liturgia| Coro</option>
-                    <option value="sacristanes">|Esp y Form. - Liturgia| Sacristanes</option>
-                    <option value="charlas-universitarias">|Esp y Form. - Char. y Ret.| Charlas Universitarias</option>
-                    <option value="charlas-abiertas">|Esp y Form. - Char. y Ret.| Charlas Abiertas</option>
-                    <option value="entretiempo">|Esp y Form. - Char. y Ret.| Entretiempo</option>
-                    <option value="oportunidad">|Esp y Form. - Char. y Ret.| Oportunidad</option>
-                    <option value="retiros-comunitarios">|Esp y Form. - Char. y Ret.| Retiros Comunitarios</option>
-                    <option value="confirmacion">|Jóvenes| Confirmación</option>
-                    <option value="post-confirmacion">|Jóvenes| Post Confirmación</option>
-                    <option value="universitarios">|Jóvenes| Universitarios</option>
-                    <option value="mision">|Jóvenes| Misión</option>
-                    <option value="caritas">|Inic. Solidarias| Cáritas</option>
-                    <option value="proyectos-comunidad">|Inic. Solidarias| Proyectos de la Comunidad</option>
-                </select>
-                <br>
-                <input type="text" name="title" placeholder="Título" id="post-title-id" class="title form-control new-form-input" required autofocus>
-                <br>
-                <input type="file" id="post-file-id" class="new-form-input form-control-file" name="fileName" accept="image/*">
-                <br>
-                <br>
-                <textarea placeholder="Escribir novedad..." name="body" id="post-body-id" class="form-control new-form-input" required></textarea> 
-                <br>
-                <button type="submit" id="submit-post-upload" class="btn btn-md btn-primary"><i class="fas fa-plus"></i>Crear</button>
-            </form>
+            <div class="new-form-container">
+                <form class="new-form" id="new-post-form">
+                    <select class="form-control new-form-input" id="post-section-id">
+                        <option value="default" name="default">Seleccionar categoría</option>
+                        <option value="matrimonios" name="matrimonios">|Serv para la Com.| Matrimonios</option>
+                        <option value="bautismos">|Serv para la Com.| Bautismos</option>
+                        <option value="visitas-a-enfermos">|Serv para la Com.| Visitas a enfermos</option>
+                        <option value="adoracion">|Esp y Form.| Adoración</option>
+                        <option value="equipo-organizador">|Esp y Form. - Liturgia| Equipo Organizador</option>
+                        <option value="equipo-de-ministros">|Esp y Form. - Liturgia| Equipo de Ministros</option>
+                        <option value="coro">|Esp y Form. - Liturgia| Coro</option>
+                        <option value="sacristanes">|Esp y Form. - Liturgia| Sacristanes</option>
+                        <option value="charlas-universitarias">|Esp y Form. - Char. y Ret.| Charlas Universitarias</option>
+                        <option value="charlas-abiertas">|Esp y Form. - Char. y Ret.| Charlas Abiertas</option>
+                        <option value="entretiempo">|Esp y Form. - Char. y Ret.| Entretiempo</option>
+                        <option value="oportunidad">|Esp y Form. - Char. y Ret.| Oportunidad</option>
+                        <option value="retiros-comunitarios">|Esp y Form. - Char. y Ret.| Retiros Comunitarios</option>
+                        <option value="confirmacion">|Jóvenes| Confirmación</option>
+                        <option value="post-confirmacion">|Jóvenes| Post Confirmación</option>
+                        <option value="universitarios">|Jóvenes| Universitarios</option>
+                        <option value="mision">|Jóvenes| Misión</option>
+                        <option value="caritas">|Inic. Solidarias| Cáritas</option>
+                        <option value="proyectos-comunidad">|Inic. Solidarias| Proyectos de la Comunidad</option>
+                    </select>
+                    <br>
+                    <input type="text" name="title" placeholder="Título" id="post-title-id" class="title form-control new-form-input" required autofocus>
+                    <br>
+                    <input type="file" id="post-file-id" class="new-form-input form-control-file" name="fileName" accept="image/*">
+                    <br>
+                    <br>
+                    <textarea placeholder="Escribir novedad..." name="body" id="post-body-id" class="form-control new-form-input" required></textarea> 
+                    <br>
+                    <button type="submit" id="submit-post-upload" class="btn btn-md btn-primary"><i class="fas fa-plus"></i>Crear</button>
+                </form> 
+            </div>
+            <div class="loading-text">
+                <p>Cargando...</p>            
+            </div>
         </div>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="/assets/js/upload-post.js"></script>

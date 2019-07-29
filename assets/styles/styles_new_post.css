@@ -13,6 +13,10 @@ body{
     text-align: center;
 }
 
+.new-form-container{
+    padding-bottom: 10px;
+}
+
 .new-form-input{
     width: 80%;
     margin: auto;
@@ -31,6 +35,10 @@ textarea.new-form-input{
 .fa-plus, .fa-pen{
     font-size: 0.85rem;
     margin-right: 6px;
+}
+
+.loading-text{
+    display: none;
 }
 
 @media (min-width: 767px) { 
