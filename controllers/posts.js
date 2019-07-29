@@ -78,7 +78,7 @@ const uploadFile = (buffer, name, type) => {
                     date: new Date(),
                     section: fieldsSection
                     })
-                    .then(() => console.log('sent!')) //NO FUNCIONA!!!
+                    .then(() => console.log('sent!'))
                     .catch(err=> console.log('could not add post: ' + err))
             } catch (error) {
                 return response.status(400).send(error);
