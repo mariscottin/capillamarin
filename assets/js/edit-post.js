@@ -1,13 +1,11 @@
 const submit = document.getElementById('submit-post-edit');
-const section = document.getElementById('post-section-id');
-const postTitle = document.getElementById('post-title-id');
-const postBody = document.getElementById('post-body-id');
-const loadingBtn = document.getElementById('loading-btn');
+const section = document.getElementById('edit-post-section-id');
+const postTitle = document.getElementById('edit-post-title-id');
+const postBody = document.getElementById('edit-post-body-id');
+const loadingBtn = document.getElementById('loading-edit-btn');
 
 
 submit.addEventListener('click', (e)=> {
-    e.preventDefault();
-
     if(section.value === "default" || postTitle.value === "" || postBody.value === ""){
       alert('Por favor, completar todos los campos');
     }else{

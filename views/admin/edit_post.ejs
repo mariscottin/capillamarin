@@ -18,7 +18,7 @@
             <h1 class="new-novedad-h1">Editar Novedad</h1>
             <div class="new-form-container">
                 <form action="/post/edit/<%=post.id%>" method='post' class="new-form">
-                    <select class="form-control new-form-input" id="post-section-id" name="section" autofocus required>
+                    <select class="form-control new-form-input" id="edit-post-section-id" name="section" autofocus required>
                         <option value="default">Seleccionar categoría</option>
                         <option value="Matrimonios">|Serv para la Com.| Matrimonios</option>
                         <option value="Bautismos">|Serv para la Com.| Bautismos</option>
@@ -41,10 +41,10 @@
                         <option value="Proyectos de la Comunidad">|Inic. Solidarias| Proyectos de la Comunidad</option>
                     </select>
                     <br>
-                    <input type="text" name="title" value="<%=post.title%>" class="title form-control new-form-input" required>
+                    <input type="text" id="edit-post-title-id" name="title" value="<%=post.title%>" class="title form-control new-form-input" required>
                     <br>
                     <br>
-                    <textarea name="body" class="form-control new-form-input" required><%=post.body%></textarea> 
+                    <textarea name="body" id="edit-post-body-id" class="form-control new-form-input" required><%=post.body%></textarea> 
                     <br>
                     <button type="submit" id="submit-post-edit" class="btn btn-md btn-primary"><i class="far fa-save"></i>Guardar</button>
                     <button class="btn btn-primary" id="loading-edit-btn" type="button" disabled>
