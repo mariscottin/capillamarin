@@ -1,4 +1,4 @@
-const submit = document.getElementById('submit-post-upload');
+const submit = document.getElementById('submit-post-edit');
 const section = document.getElementById('post-section-id');
 const postTitle = document.getElementById('post-title-id');
 const postBody = document.getElementById('post-body-id');
