@@ -38,7 +38,7 @@ textarea.new-form-input{
     display: none;
 }
 
-.fa-plus, .fa-pen{
+.fa-plus, .fa-pen, .fa-save{
     font-size: 0.85rem;
     margin-right: 6px;
 }
