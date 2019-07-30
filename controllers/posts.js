@@ -103,8 +103,8 @@ const uploadFile = (buffer, name, type) => {
 
     edit: (req, res)=> {
         knex('posts').where('id', req.params.id).update({
+            section: req.body.section,
             title: req.body.title,
-            img_url: req.body.img_url,
             body: req.body.body
         })
         .then(()=> res.redirect('/admin/posts?alert=Novedad%20editada%20con%20exito'))
