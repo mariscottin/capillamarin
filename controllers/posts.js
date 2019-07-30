@@ -76,7 +76,8 @@ const uploadFile = (buffer, name, type) => {
                     img_url: data.Location,
                     user_id: 2, //Hardcoded
                     date: new Date(),
-                    section: fieldsSection
+                    section: fieldsSection,
+                    img_path: path
                     })
                     .then(() => console.log('sent!'))
                     .catch(err=> console.log('could not add post: ' + err))
