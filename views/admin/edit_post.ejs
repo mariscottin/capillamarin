@@ -18,7 +18,7 @@
             <h1 class="new-novedad-h1">Editar Novedad</h1>
             <div class="new-form-container">
                 <form action="/post/edit/<%=post.id%>" method='post' class="new-form">
-                    <select class="form-control new-form-input" id="post-section-id" name="Seleccionar Categoría" autofocus required>
+                    <select value="<%=post.section%>" class="form-control new-form-input" id="post-section-id" name="Seleccionar Categoría" autofocus required>
                         <option value="default">Seleccionar categoría</option>
                         <option value="Matrimonios">|Serv para la Com.| Matrimonios</option>
                         <option value="Bautismos">|Serv para la Com.| Bautismos</option>
