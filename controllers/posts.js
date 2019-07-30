@@ -110,5 +110,8 @@ const uploadFile = (buffer, name, type) => {
             })
             .then(()=> res.redirect('/admin/posts?alert=Novedad%20editada%20con%20exito'))
         }
+        else{
+            console.log('nothing to change')
+        }
     }
 }
