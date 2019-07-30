@@ -102,10 +102,13 @@ const uploadFile = (buffer, name, type) => {
     },
 
     edit: (req, res)=> {
-        knex('posts').where('id', req.params.id).update({
-            section: req.body.section,
-            title: req.body.title,
-            body: req.body.body
-        })
+        if(req.body.section === "default" || req.body.title === "" || req.body.body === "" ) {
+            knex('posts').where('id', req.params.id).update({
+                section: req.body.section,
+                title: req.body.title,
+                body: req.body.body
+            })
+            .then(()=> res.redirect('/admin/posts?alert=Novedad%20editada%20con%20exito'))
+        }
     }
 }

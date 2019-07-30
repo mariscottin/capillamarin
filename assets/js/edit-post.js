@@ -11,6 +11,5 @@ submit.addEventListener('click', (e)=> {
     }else{
       submit.style.display = 'none';
       loadingBtn.style.display = 'block';
-      window.location = '/admin/posts?alert=Novedad%20editada%20con%20exito';
     }
 });
