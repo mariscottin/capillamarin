@@ -4,8 +4,6 @@ const postTitle = document.getElementById('edit-post-title-id');
 const postBody = document.getElementById('edit-post-body-id');
 const loadingBtn = document.getElementById('loading-edit-btn');
 
-console.log(section.options);
-
 submit.addEventListener('click', (e)=> {
     if(section.value === "default" || postTitle.value === "" || postBody.value === ""){
       alert('Por favor, completar todos los campos');
@@ -31,4 +29,5 @@ function setSelectedIndex(s, i){
 
 setSelectedIndex(section, 5);
 
-indexMatchingText(section.options, section.name);
+const result = indexMatchingText(section.options, section.name);
+console.log(result);
