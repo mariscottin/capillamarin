@@ -45,7 +45,7 @@ const uploadFile = (buffer, name, type) => {
                     post.date = date;
                     post.time = time;
                 })
-                res.render('./admin/all_posts', {posts: results, alert: req.query.alert});
+                res.render('./admin/all_posts', {posts: results, alert: req.query.alert, error: req.query.error});
             })
             .catch(err => res.status(400).send('error getting posts: ' + err))
     },
@@ -111,7 +111,7 @@ const uploadFile = (buffer, name, type) => {
             .then(()=> res.redirect('/admin/posts?alert=Novedad%20editada%20con%20exito'))
         }
         else{
-            res.redirect('/admin/posts');
+            res.redirect('/admin/posts?error=Error%20editando%20novedad.%20Por%20favor%intentar%20de%20nuevo.');
         }
     }
 }

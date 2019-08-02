@@ -23,6 +23,12 @@
                 <%= alert %>
             </div>
         <% } %>
+        <% if(typeof error !== 'undefined') { %>
+            <div class="alert alert-danger" id="alert-msg" role="alert">
+                <p class="close-alert" id="close-x">x</p>
+                <%= error %>
+            </div>
+        <% } %>
         <a href="/admin/posts/new" class="btn btn-md btn-primary new-post-link">Crear Novedad</a>
         <div class="table-responsive">
             <table class="table table-striped">
