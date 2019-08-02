@@ -17,6 +17,8 @@ function indexMatchingText(ele, text) {
   let result = undefined;
   for (let i = 1; i < ele.options.length; ++i) {
     let newText = ele.options[i].text.replace(/\|(.+?)\|/g, '')
+    console.log(`New text = ${newText}`);
+    console.log(`Text = ${text}`);
     if (newText === text) { 
         // ele.options[i].selected = true;
         console.log(`${newText} is equal to ${text}!!`);
