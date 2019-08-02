@@ -14,12 +14,15 @@ submit.addEventListener('click', (e)=> {
 });
 
 function indexMatchingText(ele, text) {
-  for (var i=0; i<ele.length;i++) {
-      if (ele[i].childNodes[0].nodeValue === text){
-          return i;
-      }
+  for (var i = 0; i < ele.options.length; ++i) {
+    if (ele.options[i].text === text) { 
+        // ele.options[i].selected = true;
+        return i
+    }else{
+        return undefined;
+    }
   }
-  return undefined;
+
 }
 
 function setSelectedIndex(s, i){
