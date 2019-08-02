@@ -32,5 +32,5 @@ function setSelectedIndex(s, i){
 
 setSelectedIndex(section, 5);
 
-const result = indexMatchingText(section.options, section.name);
+const result = indexMatchingText(section, section.name);
 console.log(result);
