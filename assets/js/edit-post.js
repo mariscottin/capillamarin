@@ -14,6 +14,7 @@ submit.addEventListener('click', (e)=> {
 });
 
 function indexMatchingText(ele, text) {
+  console.log(section.name);
   for (var i = 0; i < ele.options.length; ++i) {
     if (ele.options[i].text === text) { 
         // ele.options[i].selected = true;
