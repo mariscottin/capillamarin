@@ -18,6 +18,7 @@ function indexMatchingText(ele, text) {
   for (let i = 0; i < ele.options.length; ++i) {
     let newText = ele.options[i].text.replace(/\|(.+?)\|/g, '')
     console.log(i, ele.options[i].text);
+    console.log(newText);
     if (ele.options[i].text === text) { 
         // ele.options[i].selected = true;
         return i;
