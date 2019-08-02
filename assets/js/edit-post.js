@@ -14,7 +14,7 @@ submit.addEventListener('click', (e)=> {
 });
 
 function indexMatchingText(ele, text) {
-  for (let i = 0; i < ele.options.length; ++i) {
+  for (let i = 1; i < ele.options.length; ++i) {
     let newText = ele.options[i].text.replace(/\|(.+?)\|/g, '')
     console.log(`Old Text: ${i, ele.options[i].text}`);
     console.log(`New Text: ${newText.substr(1)}`);
