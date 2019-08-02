@@ -29,7 +29,7 @@ function indexMatchingText(ele, text) {
 }
 
 function setSelectedIndex(s, i){
-  s.options[i-1].selected = true;
+  s.options[i].selected = true;
   return;
 }
 
