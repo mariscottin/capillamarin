@@ -14,14 +14,16 @@ submit.addEventListener('click', (e)=> {
 });
 
 function indexMatchingText(ele, text) {
+  let result = undefined;
   for (let i = 1; i < ele.options.length; ++i) {
     let newText = ele.options[i].text.replace(/\|(.+?)\|/g, '')
     if (newText === text) { 
         // ele.options[i].selected = true;
-        return i;
+        console.log(`${newText} is equal to ${text}!!`);
+        result = i;
     }
   }
-
+  return result;
 }
 
 function setSelectedIndex(s, i){
