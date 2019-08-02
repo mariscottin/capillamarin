@@ -13,8 +13,8 @@ submit.addEventListener('click', (e)=> {
     }
 });
 
-console.log(`Original array: ${section.classList}`);
-let myArray = section.classList.slice(0,1);
+console.log(`Original classList: ${section.classList}`);
+let myArray = section.classList.substr(0, 28);
 console.log(`New Array: ${myArray}`);
 
 function indexMatchingText(ele, text) {
