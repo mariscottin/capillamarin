@@ -13,7 +13,9 @@ submit.addEventListener('click', (e)=> {
     }
 });
 
-console.log(section.classList)
+console.log(`Original array: ${section.classList}`);
+let myArray = section.classList.slice(0,1);
+console.log(`New Array: ${myArray}`);
 
 function indexMatchingText(ele, text) {
   let result = undefined;
