@@ -14,11 +14,10 @@ submit.addEventListener('click', (e)=> {
 });
 
 function indexMatchingText(ele, text) {
-  console.log(section.name);
   for (let i = 0; i < ele.options.length; ++i) {
     let newText = ele.options[i].text.replace(/\|(.+?)\|/g, '')
-    console.log(i, ele.options[i].text);
-    console.log(newText);
+    console.log(`Old Text: ${i, ele.options[i].text}`);
+    console.log(`New Text: ${newText.substr(1)}`);
     if (ele.options[i].text === text) { 
         // ele.options[i].selected = true;
         return i;
