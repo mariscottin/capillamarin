@@ -19,9 +19,7 @@ function indexMatchingText(ele, text) {
     console.log(i, ele.options[i].text);
     if (ele.options[i].text === text) { 
         // ele.options[i].selected = true;
-        return i
-    }else{
-        return undefined;
+        return i;
     }
   }
 
