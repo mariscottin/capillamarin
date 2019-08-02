@@ -28,4 +28,7 @@ function setSelectedIndex(s, i){
   s.options[i-1].selected = true;
   return;
 }
-setSelectedIndex(document.getElementById("edit-post-section-id"), indexMatchingText(section.options, section.name));
+
+setSelectedIndex(section, 5);
+
+indexMatchingText(section.options, section.name);
