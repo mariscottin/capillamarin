@@ -16,9 +16,7 @@ submit.addEventListener('click', (e)=> {
 function indexMatchingText(ele, text) {
   for (let i = 1; i < ele.options.length; ++i) {
     let newText = ele.options[i].text.replace(/\|(.+?)\|/g, '')
-    console.log(`Old Text: ${i, ele.options[i].text}`);
-    console.log(`New Text: ${newText.substr(1)}`);
-    if (ele.options[i].text === text) { 
+    if (newText === text) { 
         // ele.options[i].selected = true;
         return i;
     }
