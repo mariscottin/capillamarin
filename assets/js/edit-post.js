@@ -13,6 +13,9 @@ submit.addEventListener('click', (e)=> {
     }
 });
 
+console.log(`Original className:${section.className}`);
+console.log(`New className:${section.className.substr(28)}`);
+
 function indexMatchingText(ele, text) {
   let result = undefined;
   for (let i = 1; i < ele.options.length; ++i) {
@@ -31,5 +34,5 @@ function setSelectedIndex(s, i){
   return;
 }
 
-let sectionText = section.className.substr(28);
+const sectionText = section.className.substr(28);
 setSelectedIndex(section, indexMatchingText(section, sectionText));
