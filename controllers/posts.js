@@ -111,7 +111,7 @@ const uploadFile = (buffer, name, type) => {
             .then(()=> res.redirect('/admin/posts?alert=Novedad%20editada%20con%20exito'))
         }
         else{
-            res.redirect('/admin/posts?error=Error%20editando%20novedad.%20Por%20favor%intentar%20de%20nuevo.');
+            res.redirect('/admin/posts?error=Error%20editando%20novedad.%20Por%20favor%20intentar%20de%20nuevo.');
         }
     }
 }
