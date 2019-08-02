@@ -13,7 +13,8 @@ submit.addEventListener('click', (e)=> {
     }
 });
 
-console.log(`Original classList: ${section.className}`);
+console.log(`Original className: ${section.className}`);
+console.log(`New className: ${section.className.substr(0, 12)}`);
 
 function indexMatchingText(ele, text) {
   let result = undefined;
