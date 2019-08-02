@@ -19,7 +19,7 @@
             <div class="new-form-container">
                 <form action="/post/edit/<%=post.id%>" method='post' class="new-form">
                     <select class="form-control new-form-input" id="edit-post-section-id" name="section" required>
-                        <option value="default">Seleccionar categoría</option>
+                        <option value="default" name='<%=post.section%>'>Seleccionar categoría</option>
                         <option value="Matrimonios">|Serv para la Com.| Matrimonios</option>
                         <option value="Bautismos">|Serv para la Com.| Bautismos</option>
                         <option value="Visitas a Enfermos">|Serv para la Com.| Visitas a enfermos</option>
