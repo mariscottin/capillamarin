@@ -13,9 +13,7 @@ submit.addEventListener('click', (e)=> {
     }
 });
 
-console.log(`Original classList: ${section.classList}`);
-let myArray = section.classList.substr(0, 28);
-console.log(`New Array: ${myArray}`);
+console.log(`Original classList: ${section.className}`);
 
 function indexMatchingText(ele, text) {
   let result = undefined;
