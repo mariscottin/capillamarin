@@ -13,12 +13,12 @@ submit.addEventListener('click', (e)=> {
     }
 });
 
+console.log(section.classList)
+
 function indexMatchingText(ele, text) {
   let result = undefined;
   for (let i = 1; i < ele.options.length; ++i) {
     let newText = ele.options[i].text.replace(/\|(.+?)\|/g, '')
-    console.log(`New text = ${newText.substr(1)}`);
-    console.log(`Text = ${text}`);
     if (newText.substr(1) === text) { 
         // ele.options[i].selected = true;
         console.log(`${newText} is equal to ${text}!!`);
