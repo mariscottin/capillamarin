@@ -102,6 +102,7 @@ const uploadFile = (buffer, name, type) => {
     },
 
     edit: (req, res)=> {
+        console.log(req.body.section)
         if(req.body.section !== "default" && req.body.title !== "" && req.body.body !== "" ) {
             knex('posts').where('id', req.params.id).update({
                 section: req.body.section,
