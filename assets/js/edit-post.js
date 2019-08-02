@@ -33,7 +33,4 @@ function setSelectedIndex(s, i){
   return;
 }
 
-setSelectedIndex(section, 5);
-
-const result = indexMatchingText(section, section.name);
-console.log(result);
+setSelectedIndex(section, indexMatchingText(section, section.name));
