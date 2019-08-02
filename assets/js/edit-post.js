@@ -15,8 +15,17 @@ submit.addEventListener('click', (e)=> {
     }
 });
 
+function indexMatchingText(ele, text) {
+  for (var i=0; i<ele.length;i++) {
+      if (ele[i].childNodes[0].nodeValue === text){
+          return i;
+      }
+  }
+  return undefined;
+}
+
 function setSelectedIndex(s, i){
   s.options[i-1].selected = true;
   return;
 }
-setSelectedIndex(document.getElementById("edit-post-section-id"), 5);
+setSelectedIndex(section, indexMatchingText(section.options, section.name));
