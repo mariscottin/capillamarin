@@ -67,7 +67,7 @@ const uploadFile = (buffer, name, type) => {
                 const buffer = fs.readFileSync(path);
                 const type = fileType(buffer);
                 const timestamp = Date.now().toString();
-                const fileName = `bucketFolder/${timestamp}-lg`;
+                const fileName = `/${timestamp}-lg`;
                 const data = await uploadFile(buffer, fileName, type);
                 console.log(data);
                 knex('posts').insert(
@@ -94,21 +94,24 @@ const uploadFile = (buffer, name, type) => {
     delete: (req, res)=> {
 
         knex('posts').where('id', req.params.id)
-        .then((data) => console.log(data))
-        /* The following example deletes an object from an S3 bucket. */
+        .then((knexData) => {
+            console.log(knexData[0].aws_key)
+            /* The following example deletes an object from an S3 bucket. */
+            var params = {
+                Bucket: process.env.S3_BUCKET, 
+                Key: data[0].aws_key
+            };
+            s3.deleteObject(params, function(err, data) {
+                if (err) console.log(err, err.stack); // an error occurred
+                else     console.log(data);           // successful response
+                /*
+                data = {
+                }
+                */
+            });
+        }).del()
+        .then(res.redirect('/admin/posts?alert=Novedad%20eliminada%20con%20exito'))
 
-        // var params = {
-        //     Bucket: "examplebucket", 
-        //     Key: "objectkey.jpg"
-        // };
-        // s3.deleteObject(params, function(err, data) {
-        //     if (err) console.log(err, err.stack); // an error occurred
-        //     else     console.log(data);           // successful response
-        //     /*
-        //     data = {
-        //     }
-        //     */
-        // });
     },
 
     editShow: (req, res)=> {
