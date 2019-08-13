@@ -1,5 +1,5 @@
 const deleteBtn = document.getElementById('delete-post-btn');
-const postId = document.getElementById('delModal').parentNode.id;
+const postId = deleteBtn.parentNode.id;
 
 deleteBtn.addEventListener('click', (e) => {
     e.preventDefault();

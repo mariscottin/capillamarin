@@ -47,26 +47,7 @@
                     <%  for(let i=0; i<posts.length; i++) {%>
                         <tr>
                             <th scope="row" id="<%=posts[i].id%>">
-                                <span class="table-icon delete-icon" data-toggle="modal" data-target="#delModal"><i class="far fa-trash-alt"></i></span>
-                                <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="delModalLabel">Atención</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                ¿Estás seguro de que quieres eliminar esta novedad {<%=posts[i].id%>}?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                                                <button type="submit" class="btn btn-danger" id="delete-post-btn">Eliminar {<%=posts[i].id%>}</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <span class="table-icon delete-icon" id="delete-post-btn"><i class="far fa-trash-alt"></i></span>  
                             </th>
                             <th scope="row">
                                 <span class="table-icon edit-icon"><a href="/post/edit/<%=posts[i].id%>"><i class="fas fa-pen"></a></i></span>
