@@ -46,7 +46,7 @@
                 <tbody>
                     <%  for(let i=0; i<posts.length; i++) {%>
                         <tr>
-                            <th scope="row" id="post-id-<%=posts[i].id%>">
+                            <th scope="row" id="<%=posts[i].id%>">
                                 <span class="table-icon delete-icon" data-toggle="modal" data-target="#delModal"><i class="far fa-trash-alt"></i></span>
                                 <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
