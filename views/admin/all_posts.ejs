@@ -47,7 +47,7 @@
                     <%  for(let i=0; i<posts.length; i++) {%>
                         <tr>
                             <th scope="row">
-                                <span class="table-icon delete-icon" data-toggle="modal" data-target="#imgModal"><i class="far fa-trash-alt"></i></span>
+                                <span class="table-icon delete-icon" data-toggle="modal" data-target="#imgModal">{<%=posts[i].id%>}<i class="far fa-trash-alt"></i></span>
                                 <div class="modal fade" id="imgModal" tabindex="-1" role="dialog" aria-labelledby="imgModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -58,7 +58,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                ¿Estás seguro que quieres eliminar esta novedad?
+                                                ¿Estás seguro de que quieres eliminar esta novedad?
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
