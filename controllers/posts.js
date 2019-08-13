@@ -93,8 +93,8 @@ const uploadFile = (buffer, name, type) => {
 
     delete: (req, res)=> {
 
-        let letsSee = knex('posts').where('id', req.params.id)
-        console.log(letsSee);
+        knex('posts').where('id', req.params.id)
+        .then((data) => console.log(data))
         /* The following example deletes an object from an S3 bucket. */
 
         // var params = {
