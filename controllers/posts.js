@@ -96,18 +96,18 @@ const uploadFile = (buffer, name, type) => {
         .then((knexData) => {
             console.log(knexData[0])
             /* The following example deletes an object from an S3 bucket. */
-            var par = {
-                Bucket: process.env.S3_BUCKET,
-                Key: knexData[0].aws_key
-            };
-            s3.deleteObject(par, function(err, data) {
-                if (err) console.log(err, err.stack); // an error occurred
-                else     console.log(data);           // successful response
-                /*
-                data = {
-                }
-                */
-            });
+            // var par = {
+            //     Bucket: process.env.S3_BUCKET,
+            //     Key: knexData[0].aws_key
+            // };
+            // s3.deleteObject(par, function(err, data) {
+            //     if (err) console.log(err, err.stack); // an error occurred
+            //     else     console.log(data);           // successful response
+            //     /*
+            //     data = {
+            //     }
+            //     */
+            // });
         })
         .then(res.redirect('/admin/posts?alert=Novedad%20eliminada%20con%20exito'))
 
