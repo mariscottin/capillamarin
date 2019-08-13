@@ -99,7 +99,7 @@ const uploadFile = (buffer, name, type) => {
             /* The following example deletes an object from an S3 bucket. */
             var params = {
                 Bucket: process.env.S3_BUCKET, 
-                Key: data[0].aws_key
+                Key: knexData[0].aws_key
             };
             s3.deleteObject(params, function(err, data) {
                 if (err) console.log(err, err.stack); // an error occurred
