@@ -109,7 +109,7 @@ const uploadFile = (buffer, name, type) => {
                 }
                 */
             });
-        }).del()
+        })
         .then(res.redirect('/admin/posts?alert=Novedad%20eliminada%20con%20exito'))
 
     },
