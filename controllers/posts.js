@@ -78,7 +78,8 @@ const uploadFile = (buffer, name, type) => {
                     user_id: 2, //Hardcoded
                     date: new Date(),
                     section: fieldsSection,
-                    img_path: path
+                    img_path: path,
+                    aws_key: data.Key
                     })
                     .then(() => console.log('sent!'))
                     .catch(err=> console.log('could not add post: ' + err))
@@ -91,8 +92,23 @@ const uploadFile = (buffer, name, type) => {
     },
 
     delete: (req, res)=> {
-        knex('posts').where('id', req.params.id).del()
-        .then(()=> res.redirect('/admin/posts?alert=Novedad%20eliminada%20con%20exito'))
+
+        let letsSee = knex('posts').where('id', req.params.id)
+        console.log(letsSee);
+        /* The following example deletes an object from an S3 bucket. */
+
+        // var params = {
+        //     Bucket: "examplebucket", 
+        //     Key: "objectkey.jpg"
+        // };
+        // s3.deleteObject(params, function(err, data) {
+        //     if (err) console.log(err, err.stack); // an error occurred
+        //     else     console.log(data);           // successful response
+        //     /*
+        //     data = {
+        //     }
+        //     */
+        // });
     },
 
     editShow: (req, res)=> {
