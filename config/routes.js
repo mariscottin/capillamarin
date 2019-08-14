@@ -92,6 +92,7 @@ module.exports = (app) => {
     app.post('/post/edit/:id', posts.edit);
 
     app.post('/post/delete/:id', posts.delete);
+    
 }
 
 function authMiddleware(req, res, next){
