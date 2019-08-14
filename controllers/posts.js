@@ -92,7 +92,7 @@ const uploadFile = (buffer, name, type) => {
     },
 
     delete: (req, res)=> {
-        knex('posts').where('id', req.params.id)
+        knex('posts').where('id', req.params.id).del()
         .then((knexData) => {
             console.log(knexData[0])
             /* The following example deletes an object from an S3 bucket. */
@@ -110,7 +110,7 @@ const uploadFile = (buffer, name, type) => {
             });
         })
         .then(res.redirect('/admin/posts?alert=Novedad%20eliminada%20con%20exito'))
-
+        .catch(err => console.log(err))
     },
 
     editShow: (req, res)=> {

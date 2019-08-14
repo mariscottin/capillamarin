@@ -58,12 +58,12 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                ¿Estás seguro de que quieres eliminar esta novedad {<%=posts[i].id%>}?
+                                                ¿Estás seguro de que quieres eliminar esta novedad?
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
                                                 <form action="/post/delete/<%=posts[i].id%>" method="post">
-                                                    <button type="submit" class="btn btn-danger" id="delete-post-btn">Eliminar {<%=posts[i].id%>}</button>
+                                                    <button type="submit" class="btn btn-danger" id="delete-post-btn">Eliminar</button>
                                                 </form>
                                             </div>
                                         </div>
