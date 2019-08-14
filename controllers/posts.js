@@ -108,8 +108,8 @@ const uploadFile = (buffer, name, type) => {
                 }
                 */
             });
-            knexData.del()
         })
+        knex('posts').where('id', req.params.id).del()
         .then(res.redirect('/admin/posts?alert=Novedad%20eliminada%20con%20exito'))
         .catch(err => console.log(err))
     },
