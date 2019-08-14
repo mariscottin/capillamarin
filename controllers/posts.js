@@ -109,9 +109,10 @@ const uploadFile = (buffer, name, type) => {
                 */
             });
         })
-        .then(knex('posts').where('id', req.params.id).del())
-        .then(res.redirect('/admin/posts?alert=Novedad%20eliminada%20con%20exito'))
-        .catch(err => console.log(err))
+        .del()
+        // .then()
+        // .then(res.redirect('/admin/posts?alert=Novedad%20eliminada%20con%20exito'))
+        // .catch(err => console.log(err))
     },
 
     editShow: (req, res)=> {
