@@ -98,7 +98,11 @@ module.exports = {
     },
 
     retirosComunitarios: (req, res) => {
-        res.render('./web/retiros/retiros_comunitarios');
+        knex('posts').where('section', 'Retiros Comunitarios')
+            .then((data) => {
+                console.log(data);
+                res.render('./web/retiros/retiros_comunitarios');
+            })
     },
 
     // -- Jovenes --
