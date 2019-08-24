@@ -86,6 +86,15 @@
             </div>
         </nav>
         <h1>Retiros Comunitarios</h1>
+        <%
+            if(posts.length > 0) {
+                <h2>Novedades</h2>
+                for(i=0; i<posts.length; i++){
+                    <p><%=posts[i].title%></p>
+                }
+            }
+        
+        %>
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
