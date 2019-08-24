@@ -29,7 +29,12 @@ module.exports = {
     // -- Servicios para la Comunidad --
 
     matrimonios: (req, res) => {
-        res.render('./web/servicios_comunidad/matrimonios');
+        knex('posts').where('section', 'Matrimonios')
+            .then((data) => {
+                console.log(data);
+                res.render('./web/servicios_comunidad/matrimonios');
+            })
+
     },
 
     cursosPrematrimoniales: (req, res) => {
