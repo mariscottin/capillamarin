@@ -98,7 +98,7 @@ module.exports = {
     },
 
     retirosComunitarios: (req, res) => {
-        knex('posts').where('section', 'Retiros Comunitarios')
+        knex('posts').where('section', 'Retiros Comunitarios').orderBy('created_at', 'DESC')
             .then((data) => {
                 console.log(data);
                 res.render('./web/retiros/retiros_comunitarios', {posts: data});
