@@ -33,6 +33,13 @@
 
 .section-post-img{
     margin-bottom: 12px;
+    max-width: 450px;
+}
+
+@media (max-width: 576px){
+    .section-post-img {
+        max-width: 200px;
+    }
 }
 
 
