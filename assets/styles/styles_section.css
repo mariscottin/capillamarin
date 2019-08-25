@@ -12,6 +12,21 @@
    width: 100% !important;
 }
 
+@media (min-width: 576px){
+    .jumbotron {
+        padding: 2rem;
+    }
+}
+
+.jumbotron{
+    margin-top: 20px;
+}
+
+.section-post-card{
+    margin-top: 10px;
+}
+
+
 /* NOSOTROS */
 .organigrama-center{
     text-align: center;

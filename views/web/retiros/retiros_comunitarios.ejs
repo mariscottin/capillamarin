@@ -144,16 +144,16 @@
                 </div>
             </div>
             <% if(posts.length > 0) { %>
-                <div class="section-posts-list container">
-                        <h2 class="section-posts-list-title">Novedades: <%=posts[0].section%></h2>
+                <div class="section-posts-list container jumbotron">
+                        <h2 class="section-posts-list-title">Novedades</h2>
                         <% for(i=0; i<posts.length; i++) { %>
-                            <div class="card text-center">
+                            <div class="card text-center section-post-card">
                                 <div class="card-body">
                                     <h5 class="card-title"><%=posts[i].title%></h5>
                                     <p class="card-text"><%=posts[i].body%></p>
                                 </div>
                                 <div class="card-footer text-muted">
-                                    <%=posts[i].date%>
+                                    <%=posts[i].created_at%>
                                 </div>
                             </div>
                         <% } %>
