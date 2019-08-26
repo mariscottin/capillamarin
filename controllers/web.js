@@ -101,6 +101,12 @@ module.exports = {
         knex('posts').where('section', 'Retiros Comunitarios').orderBy('created_at', 'DESC')
             .then((data) => {
                 console.log(data);
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
                 res.render('./web/retiros/retiros_comunitarios', {posts: data});
             })
     },
