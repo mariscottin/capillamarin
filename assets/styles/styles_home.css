@@ -448,6 +448,7 @@ footer{
 
 /*NOVEDAD*/
 .novedad-page{
+    padding-top: 100px;
     text-align: center;
 }
 
@@ -457,6 +458,6 @@ footer{
 
 .novedad-page-img{
     width: 70%;
-    max-width: 600px;
+    max-width: 500px;
     margin: auto;
 }
