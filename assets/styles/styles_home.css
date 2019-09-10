@@ -453,6 +453,8 @@ footer{
 }
 
 .novedad-page-title{
+    width: 80%;
+    margin: auto;
     text-transform: uppercase;
 }
 
@@ -460,4 +462,8 @@ footer{
     width: 70%;
     max-width: 500px;
     margin: auto;
+}
+
+.novedad-page-body{
+    width: 80%;
 }
