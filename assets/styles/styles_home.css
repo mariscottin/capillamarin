@@ -109,7 +109,6 @@
 
 .card-grow:hover{
     transform: scale(1.02);
-    cursor: pointer;
 }
 
 .date-time{
@@ -399,8 +398,6 @@ footer{
     color: #b4b4b4;
 }
 
-/* If you don't want the footer to be responsive, remove these media queries */
-
 @media (max-width: 890px) {
 
 	.footer-distributed{
@@ -449,4 +446,17 @@ footer{
 }
 
 
+/*NOVEDAD*/
+.novedad-page{
+    text-align: center;
+}
 
+.novedad-page-title{
+    text-transform: uppercase;
+}
+
+.novedad-page-img{
+    width: 70%;
+    max-width: 600px;
+    margin: auto;
+}
