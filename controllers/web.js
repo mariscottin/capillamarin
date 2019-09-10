@@ -29,6 +29,8 @@ module.exports = {
     novedad: (req, res) => {
         knex('posts').where('id', req.params.id)
         .then(result =>{
+            let str = result[0].body.replace(/(?:\r\n|\r|\n)/g, '<br>');
+            result[0].body = str;
             let date = result[0].date.substr(0, 10);
             let time = result[0].date.substr(11, 5);
                 result[0].date = date;
