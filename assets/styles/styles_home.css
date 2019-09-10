@@ -450,8 +450,12 @@ footer{
 .novedad-page-main-body{
     background-color: rgb(235, 235, 235);
 }
+
 .novedad-page{
     padding-top: 100px;
+}
+
+.novedad-page-content{
     text-align: center;
 }
 
