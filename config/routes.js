@@ -11,6 +11,8 @@ module.exports = (app) => {
 
     app.get('/nosotros', web.nosotros);
 
+    app.get('/novedad/:id', web.novedad)
+
     // -- Servicios para la Comunidad --
     app.get('/servicios-para-la-comunidad/matrimonios', web.matrimonios);
 

@@ -26,6 +26,13 @@ module.exports = {
         res.render('./web/nosotros');
     },
 
+    novedad: (req, res) => {
+        knex('posts').where('id', req.params.id)
+        .then(result =>{
+            res.render('./web/novedad', {post: result[0]});
+        }) 
+    },
+
     // -- Servicios para la Comunidad --
 
     matrimonios: (req, res) => {
