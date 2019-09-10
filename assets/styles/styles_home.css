@@ -447,6 +447,9 @@ footer{
 
 
 /*NOVEDAD*/
+.novedad-page-main-body{
+    background-color: rgb(244, 253, 250);
+}
 .novedad-page{
     padding-top: 100px;
     text-align: center;
@@ -462,8 +465,12 @@ footer{
     width: 70%;
     max-width: 500px;
     margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .novedad-page-body{
     width: 80%;
+    margin: auto;
+    margin-bottom: 15px;
 }
