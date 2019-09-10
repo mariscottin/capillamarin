@@ -452,7 +452,11 @@ footer{
 }
 
 .novedad-page{
-    padding-top: 100px;
+    padding-top: 112px;
+}
+
+.novedad-page-back{
+    margin-bottom: 12px;
 }
 
 .novedad-page-content{
