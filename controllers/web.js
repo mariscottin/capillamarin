@@ -17,7 +17,7 @@ module.exports = {
                 post.date = date;
                 post.time = time;
             })
-
+            console.log(threePosts)
             res.render('./web/index', {posts: threePosts})
         })
     },
@@ -36,6 +36,7 @@ module.exports = {
             let time =post.date.substr(11, 5);
                 post.date = date;
                 post.time = time;
+            console.log(post)
             res.render('./web/novedad', {post});
         }) 
     },
