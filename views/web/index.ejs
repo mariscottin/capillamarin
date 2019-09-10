@@ -98,7 +98,7 @@
                     <div class="row novedades-align">
                         <%for(let i=0; i<3; i++) {%>
                         <div class="col-md novedades-card-align">
-                            <a href="/novedad/<%=posts[i].id%>" class="card card-grow" style="width: 18rem;">
+                            <div class="card card-grow" style="width: 18rem;">
                                 <div class="card-img-top" style="background-image: url('<%=posts[i].img_url%>')"></div>
                                 <div class="card-body">
                                     <h5 class="card-title"><%=posts[i].title%></h5>
@@ -106,10 +106,9 @@
                                 </div>
                                 <div class="card-footer">
                                     <p class="date-time"><%=posts[i].date%> - <%=posts[i].time%></p>
-                                    <a href="#"><%=posts[i].section%></a>
-                                    <!-- FIGURE OUT HOW TO LINK TO SECTION--> 
+                                    <a href="/novedad/<%=posts[i].id%>">Ver Novedad</a>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                         <% } %>
                     </div>
