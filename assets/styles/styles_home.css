@@ -481,6 +481,7 @@ footer{
     width: 80%;
     margin: auto;
     margin-bottom: 15px;
+    text-align: left;
 }
 
 @media(max-width: 890px) {
