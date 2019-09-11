@@ -22,6 +22,12 @@ body{
     margin: auto;
 }
 
+.upload{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+}
+
 textarea.new-form-input{
     height: 200px;
     resize: none;
