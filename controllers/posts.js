@@ -32,6 +32,8 @@ const uploadFile = (buffer, name, type) => {
   
   module.exports = {
       allPosts: (req, res)=>{
+          let page = (req.params.page * 10);
+          console.log(page);
           knex('posts').orderBy('created_at', 'DESC')
           .then(results => {
               results.forEach(post => {
@@ -45,7 +47,8 @@ const uploadFile = (buffer, name, type) => {
                     post.date = date;
                     post.time = time;
                 })
-                res.render('./admin/all_posts', {posts: results, alert: req.query.alert, error: req.query.error});
+                let paginatedResults = results.slice(page, page+9);
+                res.render('./admin/all_posts', {posts: paginatedResults, alert: req.query.alert, error: req.query.error});
             })
             .catch(err => res.status(400).send('error getting posts: ' + err))
     },
