@@ -37,17 +37,17 @@ body{
     line-height: 2.6em;
     text-transform: uppercase;
     text-align: center;
-    background-color: #ef494f;
+    background-color: #7ad5ff;
     display: inline-block;
     border-radius: 10px;
-    box-shadow: 0px 3px 0px #a73337;
+    box-shadow: 0px 3px 0px #4ebbd6;
     transition: 150ms;
 }
 
 .upload:focus + label,
 .upload + label:hover {
-    background-color: #ff6c71;
-    box-shadow: 0px 5px 0px #d03338;
+    background-color: #6ceeff;
+    box-shadow: 0px 5px 0px #33a4d0;
     cursor:pointer;
 }
 
