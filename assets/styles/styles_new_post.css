@@ -36,7 +36,7 @@ body{
     color: white;
     line-height: 2.6em;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
     background-color: #7ad5ff;
     display: inline-block;
     border-radius: 10px;
@@ -46,7 +46,7 @@ body{
 
 .upload:focus + label,
 .upload + label:hover {
-    background-color: #6ceeff;
+    background-color: #6cc9ff;
     box-shadow: 0px 5px 0px #33a4d0;
     cursor:pointer;
 }
