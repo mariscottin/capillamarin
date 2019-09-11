@@ -46,7 +46,7 @@ const uploadFile = (buffer, name, type) => {
                     post.time = time;
                 })
                 
-                res.render('./admin/all_posts', {posts: paginatedResults, alert: req.query.alert, error: req.query.error});
+                res.render('./admin/all_posts', {posts: results, alert: req.query.alert, error: req.query.error});
             })
             .catch(err => res.status(400).send('error getting posts: ' + err))
     },
