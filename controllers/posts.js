@@ -28,11 +28,11 @@ const uploadFile = (buffer, name, type) => {
     };
     return s3.upload(params).promise();
   };
-
   
   module.exports = {
       allPosts: (req, res)=>{
-          knex('posts').orderBy('created_at', 'DESC')
+          let page = req.params.page;
+           knex('posts').orderBy('created_at', 'DESC')
           .then(results => {
               results.forEach(post => {
                   if(post.body.length > 80) {
@@ -45,7 +45,10 @@ const uploadFile = (buffer, name, type) => {
                     post.date = date;
                     post.time = time;
                 })
-                
+
+                let fromPost = (page-1)*10;
+                let toPost = fromPost + 9;
+                results = results.slice(fromPost, toPost);                
                 res.render('./admin/all_posts', {posts: results, alert: req.query.alert, error: req.query.error});
             })
             .catch(err => res.status(400).send('error getting posts: ' + err))
