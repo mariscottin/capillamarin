@@ -45,11 +45,11 @@ const uploadFile = (buffer, name, type) => {
                     post.date = date;
                     post.time = time;
                 })
-
+                let pagesAmount = Math.ceil((results.length)/10)
                 let fromPost = (page-1)*10;
                 let toPost = fromPost + 10;
                 results = results.slice(fromPost, toPost);                
-                res.render('./admin/all_posts', {posts: results, alert: req.query.alert, error: req.query.error});
+                res.render('./admin/all_posts', {posts: results, alert: req.query.alert, error: req.query.error, pages: pagesAmount});
             })
             .catch(err => res.status(400).send('error getting posts: ' + err))
     },
