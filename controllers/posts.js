@@ -47,7 +47,7 @@ const uploadFile = (buffer, name, type) => {
                 })
 
                 let fromPost = (page-1)*10;
-                let toPost = fromPost + 9;
+                let toPost = fromPost + 10;
                 results = results.slice(fromPost, toPost);                
                 res.render('./admin/all_posts', {posts: results, alert: req.query.alert, error: req.query.error});
             })
