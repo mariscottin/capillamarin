@@ -44,7 +44,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%  for(let i=0; i<posts.length; i++) {%>
+                    <% for(let i=0; i<posts.length; i++) {%>
                         <tr>
                             <th scope="row" id="<%=posts[i].id%>">
                                 <span class="table-icon delete-icon" data-toggle="modal" data-target="#delModal-<%=posts[i].id%>"><i class="far fa-trash-alt"></i></span>
@@ -107,9 +107,9 @@
                   <span class="sr-only">Previous</span>
                 </a>
               </li>
-                <% for(let i=0; i<posts.length; i++ {%>
-                    <li class="page-item"><a class="page-link" href="/admin/posts/<%=[i+1]%>"><%=[i+1]%></a></li>
-                <% } %>
+              <% for(let i=0; i<posts.length; i++) {%>
+                    <li class="page-item"><a class="page-link" href="#">#</a></li>
+                <% }%>
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
                   <span aria-hidden="true">&raquo;</span>
