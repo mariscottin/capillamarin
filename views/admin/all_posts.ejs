@@ -111,6 +111,7 @@
             </table>
         </div>
 
+        <% if(pages > 1) {%>
         <nav aria-label="Posts-pagination">
             <ul class="pagination justify-content-center">
                 <% if(currentPage > 1) {%>
@@ -134,6 +135,7 @@
                 <% }%>
             </ul>
         </nav>
+        <%}%>
     </div>
     <script>
         let closeMsg = document.getElementById('close-x');
