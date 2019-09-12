@@ -83,6 +83,8 @@ module.exports = (app) => {
 
     //POSTS
 
+    app.get('/admin/posts', posts.redirectToAllPosts);
+
     app.get('/admin/posts/:page', posts.allPosts);
     
     app.get('/admin/new-post', posts.new);

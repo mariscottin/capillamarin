@@ -54,6 +54,11 @@ const uploadFile = (buffer, name, type) => {
             .catch(err => res.status(400).send('error getting posts: ' + err))
     },
 
+    redirectToAllPosts: (req, res) => {
+        res.redirect('/admin/posts/1');
+    },
+
+
     new: (req, res)=>{
         res.render('./admin/new_post');
     },
@@ -113,7 +118,7 @@ const uploadFile = (buffer, name, type) => {
             });
         })
         knex('posts').where('id', req.params.id).del()
-        .then(res.redirect('/admin/posts?alert=Novedad%20eliminada%20con%20exito'))
+        .then(res.redirect('/admin/posts/1?alert=Novedad%20eliminada%20con%20exito'))
         .catch(err => console.log(err))
     },
 
@@ -132,10 +137,10 @@ const uploadFile = (buffer, name, type) => {
                 title: req.body.title,
                 body: req.body.body
             })
-            .then(()=> res.redirect('/admin/posts?alert=Novedad%20editada%20con%20exito'))
+            .then(()=> res.redirect('/admin/posts/1?alert=Novedad%20editada%20con%20exito'))
         }
         else{
-            res.redirect('/admin/posts?error=Error%20editando%20novedad.%20Por%20favor%20intentar%20de%20nuevo.');
+            res.redirect('/admin/posts/1?error=Error%20editando%20novedad.%20Por%20favor%20intentar%20de%20nuevo.');
         }
     }
 }
