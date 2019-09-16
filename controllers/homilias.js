@@ -63,7 +63,7 @@ module.exports = {
     create: (request, response) => {
         const form = new multiparty.Form();    
           form.parse(request, async (error, fields, files) => {
-            console.log('got to create controller!')
+            console.log(form)
             if (error) throw new Error(error);
             try {
                 const path = files.fileName[0].path;
