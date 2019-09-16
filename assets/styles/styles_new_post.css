@@ -32,7 +32,7 @@ textarea.new-form-input{
     background-color: #1c79dd;
 }
 
-#loading-btn, #loading-edit-btn{
+#loading-btn, #loading-edit-btn, #loading-audio-btn{
     text-align: center;
     margin: auto;
     display: none;
