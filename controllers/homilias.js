@@ -55,6 +55,6 @@ module.exports = {
     },
 
     new: (req, res) => {
-        res.render('.admin/new_audio');
+        res.render('./admin/new_audio');
     }
 }
