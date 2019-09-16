@@ -102,6 +102,8 @@ module.exports = (app) => {
     app.get('/admin/homilias', audios.redirectToAllAudios);
 
     app.get('/admin/homilias/:page', audios.allAudios);
+
+    app.get('/admin/new-audio', audios.new);
     
 }
 
