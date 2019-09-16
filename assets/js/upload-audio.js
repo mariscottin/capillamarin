@@ -17,7 +17,7 @@ submitAudio.addEventListener('click', (e)=> {
     submitAudio.style.display = 'none';
     loadingBtn.style.display = 'block';
     let formData = new FormData(newAudioForm);
-    formData.append('date', audioDate.value);
+    formData.append('file', audioFile.files[0]);
 
     axios({
           method: 'post',
