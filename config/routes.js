@@ -96,6 +96,8 @@ module.exports = (app) => {
     app.post('/post/edit/:id', posts.edit);
 
     app.post('/post/delete/:id', posts.delete);
+
+    app.get('/admin/audios', posts.allAudios);
     
 }
 
