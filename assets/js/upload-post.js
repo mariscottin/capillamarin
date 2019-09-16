@@ -1,6 +1,6 @@
-const loadingBtn = document.getElementById('loading-btn');
 
 //IMAGE UPLOAD
+const loadingBtn = document.getElementById('loading-btn');
 const submit = document.getElementById('submit-post-upload');
 const section = document.getElementById('post-section-id');
 const postTitle = document.getElementById('post-title-id');
@@ -27,39 +27,6 @@ submit.addEventListener('click', (e)=> {
           console.log(response);
           if(response){
             window.location = '/admin/posts/1?alert=Novedad%20creada%20con%20exito';
-          }
-  
-        }).catch(error => {
-          console.log(error);
-        });
-  }
-});
-
-//AUDIO UPLOAD
-const submitAudio = document.getElementById('submit-audio-upload');
-const audioTitle = document.getElementById('audio-title-id');
-const audioFile = document.getElementById('audio-file-id');
-const audioDate = document.getElementById('audio-date-id');
-let newAudioForm = document.getElementById('new-audio-form');
-
-submit.addEventListener('click', (e)=> {
-  e.preventDefault();
-  if(audioTitle.value === "" || audioFile.value === "" || audioDate.value === ""){
-    alert('Por favor, completar todos los campos');
-  }else{
-    submitAudio.style.display = 'none';
-    loadingBtn.style.display = 'block';
-    let formData = new FormData(newAudioForm);
-  
-    axios({
-          method: 'post',
-          url: '/audios',
-          data: formData,
-      })
-       .then(response => {
-          console.log(response);
-          if(response){
-            window.location = '/admin/homilias/1?alert=Novedad%20creada%20con%20exito';
           }
   
         }).catch(error => {
