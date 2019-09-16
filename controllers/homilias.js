@@ -19,6 +19,7 @@ const s3 = new AWS.S3();
 
 // abstracts function to upload a file returning a promise
 const uploadFile = (buffer, name, type) => {
+    console.log('got to uploadFile!!');
     const params = {
         ACL: 'public-read',
         Body: buffer,
