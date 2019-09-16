@@ -7,7 +7,7 @@ const loadingBtn = document.getElementById('loading-audio-btn');
 
 let newAudioForm = document.getElementById('new-audio-form');
 
-submit.addEventListener('click', (e)=> {
+submitAudio.addEventListener('click', (e)=> {
   e.preventDefault();
   if(audioTitle.value === "" || audioFile.value === "" || audioDate.value === ""){
     alert('Por favor, completar todos los campos');
