@@ -104,6 +104,9 @@ module.exports = (app) => {
     app.get('/admin/homilias/:page', audios.allAudios);
 
     app.get('/admin/new-audio', audios.new);
+
+    app.post('/audios', audios.create);
+
     
 }
 

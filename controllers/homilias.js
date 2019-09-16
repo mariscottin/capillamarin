@@ -56,5 +56,38 @@ module.exports = {
 
     new: (req, res) => {
         res.render('./admin/new_audio');
+    },
+
+    // Define POST route
+    create: (request, response) => {
+        const form = new multiparty.Form();    
+          form.parse(request, async (error, fields, files) => {
+            if (error) throw new Error(error);
+            try {
+                const path = files.fileName[0].path;
+                const fieldsTitle = fields.title[0];
+                const buffer = fs.readFileSync(path);
+                const type = fileType(buffer);
+                const timestamp = Date.now().toString();
+                const fileName = `/${timestamp}-lg`;
+                const data = await uploadFile(buffer, fileName, type);
+                console.log(data);
+                knex('audios').insert(
+                    {
+                    title: fieldsTitle,
+                    audio_url: data.Location,
+                    user_id: 2, //Hardcoded
+                    date: new Date(),
+                    audio_path: path,
+                    aws_key: data.Key
+                    })
+                    .then(() => console.log('sent!'))
+                    .catch(err=> console.log('could not add audio: ' + err))
+                return response.status(200).send(data)
+            } catch (error) {
+                return response.status(400).send(error);
+            }
+        })
+
     }
 }
