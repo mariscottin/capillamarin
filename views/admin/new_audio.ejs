@@ -23,8 +23,10 @@
                     <br>
                     <input type="file" id="audio-file-id" class="new-form-input form-control-file" name="fileName" accept="audio/*" required>
                     <br>
-                    <label for="audio-file-date">Fecha de la Homilía:</label>
-                    <input type="date" id="audio-file-date" class="" required>
+                    <div class="new-audio-date">
+                        <label for="audio-file-date">Fecha de la Homilía:</label>
+                        <input type="date" id="audio-file-date" class="form-control" required>
+                    </div>
                     <br>
                     <button type="submit" id="submit-audio-upload" class="btn btn-md btn-primary"><i class="fas fa-plus"></i>Cargar</button>
                     <button class="btn btn-primary" id="loading-btn" type="button" disabled>
