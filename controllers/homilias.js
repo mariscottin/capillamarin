@@ -66,6 +66,7 @@ module.exports = {
             console.log(error)
             if (error) throw new Error(error);
             try {
+                console.log('got to Try!')
                 const path = files.fileName[0].path;
                 const fieldsTitle = fields.title[0];
                 const buffer = fs.readFileSync(path);
