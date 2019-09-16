@@ -73,6 +73,7 @@ module.exports = {
                 const type = fileType(buffer);
                 const timestamp = Date.now().toString();
                 const fileName = `/${timestamp}-lg`;
+                console.log(buffer, fileName, type);
                 const data = await uploadFile(buffer, fileName, type);
                 console.log(data);
                 knex('audios').insert(
