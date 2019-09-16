@@ -99,8 +99,8 @@ module.exports = (app) => {
     app.post('/post/delete/:id', posts.delete);
 
     //AUDIOS
-    app.get('/admin/homilias', posts.redirectToAllAudios);
-    
+    app.get('/admin/homilias', audios.redirectToAllAudios);
+
     app.get('/admin/homilias/:page', audios.allAudios);
     
 }
