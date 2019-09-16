@@ -78,7 +78,6 @@ const uploadFile = (buffer, name, type) => {
                 const timestamp = Date.now().toString();
                 const fileName = `/${timestamp}-lg`;
                 const data = await uploadFile(buffer, fileName, type);
-                console.log(data);
                 knex('posts').insert(
                     {
                     title: fieldsTitle,

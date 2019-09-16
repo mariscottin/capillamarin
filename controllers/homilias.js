@@ -63,12 +63,13 @@ module.exports = {
     create: (request, response) => {
         const form = new multiparty.Form();    
           form.parse(request, async (error, fields, files) => {
-            console.log(error)
             if (error) throw new Error(error);
             try {
                 console.log('got to Try!')
                 const path = files.fileName[0].path;
+                console.log(path);
                 const fieldsTitle = fields.title[0];
+                console.log(fieldsTitle);
                 const buffer = fs.readFileSync(path);
                 const type = fileType(buffer);
                 const timestamp = Date.now().toString();
