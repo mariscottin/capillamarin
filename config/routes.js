@@ -1,4 +1,5 @@
 const posts = require('../controllers/posts');
+const audios = require('../controllers/homilias');
 const users = require('../controllers/users');
 const web = require('../controllers/web');
 
@@ -97,7 +98,10 @@ module.exports = (app) => {
 
     app.post('/post/delete/:id', posts.delete);
 
-    app.get('/admin/audios', posts.allAudios);
+    //AUDIOS
+    app.get('/admin/homilias', posts.redirectToAllAudios);
+    
+    app.get('/admin/homilias/:page', audios.allAudios);
     
 }
 

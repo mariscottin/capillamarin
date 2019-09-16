@@ -48,5 +48,9 @@ const uploadFile = (buffer, name, type) => {
               res.render('./admin/all_audios', {audios: results, alert: req.query.alert, error: req.query.error, pages: pagesAmount, currentPage: page});
           })
           .catch(err => res.status(400).send('error getting audios: ' + err))
-  }
+  },
+
+  redirectToAllAudios: (req, res) => {
+    res.redirect('/admin/homilias/1');
+},
 }
