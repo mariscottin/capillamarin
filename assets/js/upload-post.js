@@ -47,6 +47,7 @@ let newAudioForm = document.getElementById('new-audio-form');
 
 submitAudio.addEventListener('click', (e)=> {
   e.preventDefault();
+  console.log('clicked');
   if(audioTitle.value === "" || audioFile.value === "" || audioDate.value === ""){
     alert('Por favor, completar todos los campos');
   }else{
