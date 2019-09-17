@@ -1,5 +1,5 @@
 
-//IMAGE UPLOAD
+//IMAGE DOM
 const loadingBtn = document.getElementById('loading-btn');
 const submit = document.getElementById('submit-post-upload');
 const section = document.getElementById('post-section-id');
@@ -8,6 +8,15 @@ const postImage = document.getElementById('post-file-id');
 const postBody = document.getElementById('post-body-id');
 let newPostForm = document.getElementById('new-post-form');
 
+//AUDIO DOM
+const loadingAudioBtn = document.getElementById('loading-audio-btn');
+const submitAudio = document.getElementById('submit-audio-upload');
+const audioTitle = document.getElementById('audio-title-id');
+const audioFile = document.getElementById('audio-file-id');
+const audioDate = document.getElementById('audio-date-id');
+let newAudioForm = document.getElementById('new-audio-form');
+
+//IMAGE UPLOAD
 submit.addEventListener('click', (e)=> {
   e.preventDefault();
   if(section.value === "default" || postTitle.value === "" || postImage.value === "" || postBody.value === ""){
@@ -37,14 +46,6 @@ submit.addEventListener('click', (e)=> {
 
 
 //AUDIO UPLOAD
-const loadingAudioBtn = document.getElementById('loading-audio-btn');
-const submitAudio = document.getElementById('submit-audio-upload');
-const audioTitle = document.getElementById('audio-title-id');
-const audioFile = document.getElementById('audio-file-id');
-const audioDate = document.getElementById('audio-date-id');
-
-let newAudioForm = document.getElementById('new-audio-form');
-
 submitAudio.addEventListener('click', (e)=> {
   e.preventDefault();
   console.log('clicked');
