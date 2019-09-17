@@ -180,8 +180,8 @@ const uploadFile = (buffer, name, type) => {
             if (error) throw new Error(error);
             try {
                 const path = files.fileName[0].path;
-                console.log(path);
-                const fieldsTitle = fields.title[0];
+                const fieldsTitle = fields.audio-title[0];
+                console.log(fieldsTitle);
                 const buffer = fs.readFileSync(path);
                 const type = fileType(buffer);
                 const timestamp = Date.now().toString();
@@ -200,6 +200,7 @@ const uploadFile = (buffer, name, type) => {
                     .catch(err=> console.log('could not add audio: ' + err))
                 return response.status(200).send(data)
             } catch (error) {
+                console.log('HAD TO CATCH!');
                 return response.status(400).send(error);
             }
         })
