@@ -35,6 +35,7 @@ submit.addEventListener('click', (e)=> {
   }
 });
 
+
 //AUDIO UPLOAD
 const loadingAudioBtn = document.getElementById('loading-audio-btn');
 const submitAudio = document.getElementById('submit-audio-upload');
@@ -50,7 +51,7 @@ submitAudio.addEventListener('click', (e)=> {
     alert('Por favor, completar todos los campos');
   }else{
     submitAudio.style.display = 'none';
-    loadingBtn.style.display = 'block';
+    loadingAudioBtn.style.display = 'block';
 
     let formData = new FormData(newAudioForm);
 
