@@ -30,6 +30,7 @@ const uploadFile = (buffer, name, type) => {
   };
   
   module.exports = {
+      //POSTS
       allPosts: (req, res)=>{
           let page = req.params.page;
            knex('posts').orderBy('created_at', 'DESC')
@@ -141,5 +142,66 @@ const uploadFile = (buffer, name, type) => {
         else{
             res.redirect('/admin/posts/1?error=Error%20editando%20novedad.%20Por%20favor%20intentar%20de%20nuevo.');
         }
+    },
+
+    //AUDIOS
+    allAudios: (req, res) => {
+        let page = req.params.page;
+        knex('audios').orderBy('created_at', 'DESC')
+            .then(results => {
+                results.forEach(audio => {
+                    let date = audio.date.substr(0, 10);
+                    let time = audio.date.substr(11, 5);
+
+                    audio.date = date;
+                    audio.time = time;
+                })
+                let pagesAmount = Math.ceil((results.length) / 10)
+                let fromAudio = (page - 1) * 10;
+                let toAudio = fromAudio + 10;
+                results = results.slice(fromAudio, toAudio);
+                res.render('./admin/all_audios', { audios: results, alert: req.query.alert, error: req.query.error, pages: pagesAmount, currentPage: page });
+            })
+            .catch(err => res.status(400).send('error getting audios: ' + err))
+    },
+
+    redirectToAllAudios: (req, res) => {
+        res.redirect('/admin/homilias/1');
+    },
+
+    newAudio: (req, res) => {
+        res.render('./admin/new_audio');
+    },
+
+    // Define POST route
+    createAudio: (request, response) => {
+        const form = new multiparty.Form();    
+          form.parse(request, async (error, fields, files) => {
+            if (error) throw new Error(error);
+            try {
+                const path = files.fileName[0].path;
+                const fieldsTitle = fields.title[0];
+                const buffer = fs.readFileSync(path);
+                const type = fileType(buffer);
+                const timestamp = Date.now().toString();
+                const fileName = `/${timestamp}-lg`;
+                const data = await uploadFile(buffer, fileName, type);
+                knex('audios').insert(
+                    {
+                    title: fieldsTitle,
+                    audio_url: data.Location,
+                    user_id: 2, //Hardcoded
+                    date: new Date(),
+                    audio_path: path,
+                    aws_key: data.Key
+                    })
+                    .then(() => console.log('sent!'))
+                    .catch(err=> console.log('could not add audio: ' + err))
+                return response.status(200).send(data)
+            } catch (error) {
+                return response.status(400).send(error);
+            }
+        })
+
     }
 }

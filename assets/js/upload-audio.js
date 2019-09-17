@@ -9,15 +9,13 @@ let newAudioForm = document.getElementById('new-audio-form');
 
 submitAudio.addEventListener('click', (e)=> {
   e.preventDefault();
-  console.log('clicked');
   if(audioTitle.value === "" || audioFile.value === "" || audioDate.value === ""){
     alert('Por favor, completar todos los campos');
   }else{
-    console.log('got here!')
     submitAudio.style.display = 'none';
     loadingBtn.style.display = 'block';
+    
     let formData = new FormData(newAudioForm);
-    formData.append('file', audioFile.files[0]);
 
     axios({
           method: 'post',
