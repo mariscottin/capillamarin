@@ -179,9 +179,10 @@ const uploadFile = (buffer, name, type) => {
           form.parse(request, async (error, fields, files) => {
             if (error) throw new Error(error);
             try {
-                const path = files.fileName[0].path;
-                const fieldsTitle = fields.audio-title[0];
-                console.log(fieldsTitle);
+                const path = files.audioFileName[0].path;
+                console.log('Path: ' + path);
+                const fieldsTitle = fields.audioTitle[0];
+                console.log('Fields Title: ' + fieldsTitle);
                 const buffer = fs.readFileSync(path);
                 const type = fileType(buffer);
                 const timestamp = Date.now().toString();
