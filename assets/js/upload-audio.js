@@ -27,7 +27,7 @@ submitAudio.addEventListener('click', (e)=> {
            .then(response => {
               console.log(response);
               if(response){
-                window.location = '/admin/homilias/1?alert=Novedad%20creada%20con%20exito';
+                window.location = '/admin/homilias/1?alert=Homilia%20cargada%20con%20exito';
               }
       
             }).catch(error => {
