@@ -180,6 +180,7 @@ const uploadFile = (buffer, name, type) => {
             if (error) throw new Error(error);
             try {
                 const path = files.fileName[0].path;
+                console.log(path);
                 const fieldsTitle = fields.title[0];
                 const buffer = fs.readFileSync(path);
                 const type = fileType(buffer);
