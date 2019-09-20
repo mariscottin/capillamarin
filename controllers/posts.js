@@ -149,13 +149,13 @@ const uploadFile = (buffer, name, type) => {
         let page = req.params.page;
         knex('audios').orderBy('created_at', 'DESC')
             .then(results => {
-                // results.forEach(audio => {
-                //     let date = audio.date.substr(0, 10);
-                //     let time = audio.date.substr(11, 5);
+                results.forEach(audio => {
+                    let date = audio.date.substr(0, 10);
+                    let time = audio.date.substr(11, 5);
 
-                //     audio.date = date;
-                //     audio.time = time;
-                // })
+                    audio.date = date;
+                    audio.time = time;
+                })
                 let pagesAmount = Math.ceil((results.length) / 10)
                 let fromAudio = (page - 1) * 10;
                 let toAudio = fromAudio + 10;
