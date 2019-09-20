@@ -149,13 +149,13 @@ const uploadFile = (buffer, name, type) => {
         let page = req.params.page;
         knex('audios').orderBy('created_at', 'DESC')
             .then(results => {
-                results.forEach(audio => {
-                    let date = audio.date.substr(0, 10);
-                    let time = audio.date.substr(11, 5);
+                // results.forEach(audio => {
+                //     let date = audio.date.substr(0, 10);
+                //     let time = audio.date.substr(11, 5);
 
-                    audio.date = date;
-                    audio.time = time;
-                })
+                //     audio.date = date;
+                //     audio.time = time;
+                // })
                 let pagesAmount = Math.ceil((results.length) / 10)
                 let fromAudio = (page - 1) * 10;
                 let toAudio = fromAudio + 10;
@@ -181,6 +181,7 @@ const uploadFile = (buffer, name, type) => {
             try {
                 const path = files.audioFileName[0].path;
                 const fieldsTitle = fields.audioTitle[0];
+                const fieldsDate = fields.audioFileDate[0];
                 const buffer = fs.readFileSync(path);
                 const type = fileType(buffer);
                 const timestamp = Date.now().toString();
@@ -191,7 +192,7 @@ const uploadFile = (buffer, name, type) => {
                     title: fieldsTitle,
                     audio_url: data.Location,
                     user_id: 2, //Hardcoded
-                    date: new Date(),
+                    date: fieldsDate,
                     audio_path: path,
                     aws_key: data.Key
                     })
