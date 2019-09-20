@@ -16,9 +16,16 @@ module.exports = {
                 
                 post.date = date;
                 post.time = time;
+
+                knex('audios').orderBy('date', 'DESC').then((audios) => {
+                    if(audios.length >= 10){
+                        let audios = audios.slice(0, 10);
+                    }
+                })
             })
-            console.log(threePosts)
-            res.render('./web/index', {posts: threePosts})
+            console.log(results)
+            console.log(audios)
+            res.render('./web/index', {posts: threePosts, audios: audios})
         })
     },
 
