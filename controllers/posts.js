@@ -149,13 +149,6 @@ const uploadFile = (buffer, name, type) => {
         let page = req.params.page;
         knex('audios').orderBy('created_at', 'DESC')
             .then(results => {
-                results.forEach(audio => {
-                    let date = audio.date.substr(0, 10);
-                    let time = audio.date.substr(11, 5);
-
-                    audio.date = date;
-                    audio.time = time;
-                })
                 let pagesAmount = Math.ceil((results.length) / 10)
                 let fromAudio = (page - 1) * 10;
                 let toAudio = fromAudio + 10;
@@ -203,6 +196,27 @@ const uploadFile = (buffer, name, type) => {
                 return response.status(400).send(error);
             }
         })
+    },
 
+    delete: (req, res)=> {
+        knex('audios').where('id', req.params.id)
+        .then((knexData) => {
+            /* The following example deletes an object from an S3 bucket. */
+            var par = {
+                Bucket: process.env.S3_BUCKET,
+                Key: knexData[0].aws_key
+            };
+            s3.deleteObject(par, function(err, data) {
+                if (err) console.log(err, err.stack); // an error occurred
+                else     console.log(data);           // successful response
+                /*
+                data = {
+                }
+                */
+            });
+        })
+        knex('audios').where('id', req.params.id).del()
+        .then(res.redirect('/admin/homilias/1?alert=Homilia%20eliminada%20con%20exito'))
+        .catch(err => console.log(err))
     }
 }
