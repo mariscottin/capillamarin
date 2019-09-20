@@ -104,7 +104,10 @@ module.exports = (app) => {
 
     app.get('/admin/new-audio',posts.newAudio);
 
-    app.post('/audios', posts.createAudio);
+    app.post('/audio', posts.createAudio);
+
+    app.post('/audio/delete/:id', posts.deleteAudio);
+
 
     
 }

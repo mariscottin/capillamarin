@@ -21,7 +21,7 @@ submitAudio.addEventListener('click', (e)=> {
     
         axios({
               method: 'post',
-              url: '/audios',
+              url: '/audio',
               data: formData,
           })
            .then(response => {

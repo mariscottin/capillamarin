@@ -198,7 +198,7 @@ const uploadFile = (buffer, name, type) => {
         })
     },
 
-    delete: (req, res)=> {
+    deleteAudio: (req, res)=> {
         knex('audios').where('id', req.params.id)
         .then((knexData) => {
             /* The following example deletes an object from an S3 bucket. */
