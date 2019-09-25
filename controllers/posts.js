@@ -182,10 +182,10 @@ const uploadFile = (buffer, name, type) => {
                 const data = await uploadFile(buffer, fileName, type);
                 knex('audios').insert(
                     {
-                    title: fieldsTitle,
+                    audio_title: fieldsTitle,
                     audio_url: data.Location,
                     user_id: 2, //Hardcoded
-                    date: fieldsDate,
+                    audio_date: fieldsDate,
                     audio_path: path,
                     aws_key: data.Key
                     })
@@ -199,7 +199,7 @@ const uploadFile = (buffer, name, type) => {
     },
 
     deleteAudio: (req, res)=> {
-        knex('audios').where('id', req.params.id)
+        knex('audios').where('audio_id', req.params.id)
         .then((knexData) => {
             /* The following example deletes an object from an S3 bucket. */
             var par = {
@@ -215,7 +215,7 @@ const uploadFile = (buffer, name, type) => {
                 */
             });
         })
-        knex('audios').where('id', req.params.id).del()
+        knex('audios').where('audio_id', req.params.id).del()
         .then(res.redirect('/admin/homilias/1?alert=Homilia%20eliminada%20con%20exito'))
         .catch(err => console.log(err))
     }
