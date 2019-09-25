@@ -2,8 +2,7 @@ const knex = require('../db/knex');
 
 module.exports = {
     index: (req, res) => {
-        knex('posts').crossJoin('audios').orderBy('date', 'DESC').then((results) => {
-            console.log(results);
+        knex('posts').orderBy('created_at', 'DESC').then((results) => {
             let threePosts = [results[0], results[1], results[2]];
             threePosts.forEach(post => {
                 let str = post.body.replace(/(?:\r\n|\r|\n)/g, '<br>');
