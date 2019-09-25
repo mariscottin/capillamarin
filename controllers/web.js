@@ -2,7 +2,7 @@ const knex = require('../db/knex');
 
 module.exports = {
     index: (req, res) => {
-        knex('posts').crossJoin('audios').orderBy('created_at', 'DESC').then((results) => {
+        knex('posts').crossJoin('audios').orderBy('date', 'DESC').then((results) => {
             console.log(results);
             let threePosts = [results[0], results[1], results[2]];
             threePosts.forEach(post => {
