@@ -34,10 +34,10 @@ module.exports = {
     allPosts: (req, res) => {
         knex('audios').orderBy('date', 'DESC')
         .then((audios)=> {
-            console.log(audios);
             let page = req.params.page;
             knex('posts').orderBy('created_at', 'DESC')
-                .then(results => {
+            .then(results => {
+                    console.log(audios);
                     results.forEach(post => {
                         if (post.body.length > 80) {
                             shortPost = post.body.substr(0, 80);
@@ -56,7 +56,7 @@ module.exports = {
                     res.render('./admin/all_posts', { posts: results, alert: req.query.alert, error: req.query.error, pages: pagesAmount, currentPage: page });
                 })
                 .catch(err => res.status(400).send('error getting posts: ' + err))
-        }).catch(err => res.status(400).send('error getting audios: ' + err))
+            }).catch(err => res.status(400).send('error getting audios: ' + err))
     },
 
     redirectToAllPosts: (req, res) => {
