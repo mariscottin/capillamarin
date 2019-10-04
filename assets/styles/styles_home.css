@@ -490,3 +490,7 @@ footer{
         width: 100%;
     }
 }
+
+.audio-in-modal{
+    display: block;
+}
