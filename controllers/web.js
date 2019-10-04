@@ -3,29 +3,31 @@ const knex = require('../db/knex');
 module.exports = {
     index: (req, res) => {
         knex('audios').orderBy('audio_date', 'DESC')
-        .then(audios => {
-            if(audios.length > 3) {
-                audios = audios.slice(0, 4);
-            }
-            knex('posts').orderBy('created_at', 'DESC')
-            .then((results) => {
-                let threePosts = [results[0], results[1], results[2]];
-                threePosts.forEach(post => {
-                    let str = post.body.replace(/(?:\r\n|\r|\n)/g, '<br>');
-                    post.body = str;
-                    if(post.body.length > 150) {
-                        let shortPost = post.body.substr(0, 150);
-                        post.body = shortPost + '...';
-                    }
-                    let date = post.date.substr(0, 10);
-                    let time = post.date.substr(11, 5);
-                    
-                    post.date = date;
-                    post.time = time;
-                })
-                res.render('./web/index', {posts: threePosts, audios: audios})
+            .then(audios => {
+                if (audios.length === "undefined") {
+                    audios = [];
+                } else if (audios.length > 3) {
+                    audios = audios.slice(0, 4);
+                }
+                knex('posts').orderBy('created_at', 'DESC')
+                    .then((results) => {
+                        let threePosts = [results[0], results[1], results[2]];
+                        threePosts.forEach(post => {
+                            let str = post.body.replace(/(?:\r\n|\r|\n)/g, '<br>');
+                            post.body = str;
+                            if (post.body.length > 150) {
+                                let shortPost = post.body.substr(0, 150);
+                                post.body = shortPost + '...';
+                            }
+                            let date = post.date.substr(0, 10);
+                            let time = post.date.substr(11, 5);
+
+                            post.date = date;
+                            post.time = time;
+                        })
+                        res.render('./web/index', { posts: threePosts, audios: audios })
+                    })
             })
-        })
     },
 
     nosotros: (req, res) => {
@@ -34,17 +36,17 @@ module.exports = {
 
     novedad: (req, res) => {
         knex('posts').where('id', req.params.id)
-        .then(result =>{
-            let post = result[0];
-            let str = post.body.replace(/(?:\r\n|\r|\n)/g, '<br>');
+            .then(result => {
+                let post = result[0];
+                let str = post.body.replace(/(?:\r\n|\r|\n)/g, '<br>');
                 post.body = str;
-            let date =post.date.substr(0, 10);
-            let time =post.date.substr(11, 5);
+                let date = post.date.substr(0, 10);
+                let time = post.date.substr(11, 5);
                 post.date = date;
                 post.time = time;
-            console.log(post)
-            res.render('./web/novedad', {post});
-        }) 
+                console.log(post)
+                res.render('./web/novedad', { post });
+            })
     },
 
     // -- Servicios para la Comunidad --
@@ -128,7 +130,7 @@ module.exports = {
                     post.date = date;
                     post.time = time;
                 })
-                res.render('./web/retiros/retiros_comunitarios', {posts: data});
+                res.render('./web/retiros/retiros_comunitarios', { posts: data });
             })
     },
 
