@@ -167,7 +167,8 @@
                                     <div class="modal-body">
                                             <%for(let i=0; i<audios.length; i++) { %>
                                                 <div class="audio-in-modal">
-                                                    <h4><%=audios[i].audio_title%></h4>
+                                                    <h6><%=audios[i].audio_title%></h6>
+                                                    <p><%=audios[i].audio_date%></p>
                                                     <audio controls>
                                                         <source src="<%=audios[i].audio_url%>" type="audio/ogg">
                                                         <source src="<%=audios[i].audio_url%>" type="audio/mpeg">
