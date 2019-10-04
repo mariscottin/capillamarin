@@ -168,11 +168,11 @@
                                             <%for(let i=0; i<audios.length; i++) { %>
                                                 <div class="audio-in-modal">
                                                     <h6><%=audios[i].audio_title%></h6>
-                                                    <p><%=audios[i].audio_date%></p>
+                                                    <p>Fecha de la Homilía: <%=audios[i].audio_date%></p>
                                                     <audio controls>
                                                         <source src="<%=audios[i].audio_url%>" type="audio/ogg">
                                                         <source src="<%=audios[i].audio_url%>" type="audio/mpeg">
-                                                        Your browser does not support the audio tag.
+                                                        Su browser no soporta audios.
                                                     </audio>
                                                 </div>
                                             <% } %>

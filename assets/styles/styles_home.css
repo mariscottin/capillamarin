@@ -493,4 +493,6 @@ footer{
 
 .audio-in-modal{
     display: block;
+    padding: 12px;
+    border-bottom: 1px solid gray;
 }
