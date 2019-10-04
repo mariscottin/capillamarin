@@ -20,39 +20,44 @@ const s3 = new AWS.S3();
 // abstracts function to upload a file returning a promise
 const uploadFile = (buffer, name, type) => {
     const params = {
-      ACL: 'public-read',
-      Body: buffer,
-      Bucket: process.env.S3_BUCKET,
-      ContentType: type.mime,
-      Key: `${name}.${type.ext}`
+        ACL: 'public-read',
+        Body: buffer,
+        Bucket: process.env.S3_BUCKET,
+        ContentType: type.mime,
+        Key: `${name}.${type.ext}`
     };
     return s3.upload(params).promise();
-  };
-  
-  module.exports = {
-      //POSTS
-      allPosts: (req, res)=>{
-          let page = req.params.page;
-           knex('posts').orderBy('created_at', 'DESC')
-          .then(results => {
-              results.forEach(post => {
-                  if(post.body.length > 80) {
-                      shortPost = post.body.substr(0, 80);
-                      post.body = shortPost + '...';
+};
+
+module.exports = {
+    //POSTS
+    allPosts: (req, res) => {
+        let page = req.params.page;
+        knex('posts').orderBy('created_at', 'DESC')
+            .then(()=> { 
+                knex('audios').orderBy('date', 'DESC')
+                .then(audios => {
+                    console.log(audios)
+                })
+             })
+            .then(results => {
+                results.forEach(post => {
+                    if (post.body.length > 80) {
+                        shortPost = post.body.substr(0, 80);
+                        post.body = shortPost + '...';
                     }
                     let date = post.date.substr(0, 10);
                     let time = post.date.substr(11, 5);
-                    
+
                     post.date = date;
                     post.time = time;
                 })
-                let pagesAmount = Math.ceil((results.length)/10)
-                let fromPost = (page-1)*10;
+                let pagesAmount = Math.ceil((results.length) / 10)
+                let fromPost = (page - 1) * 10;
                 let toPost = fromPost + 10;
-                results = results.slice(fromPost, toPost);                
-                res.render('./admin/all_posts', {posts: results, alert: req.query.alert, error: req.query.error, pages: pagesAmount, currentPage: page});
+                results = results.slice(fromPost, toPost);
+                res.render('./admin/all_posts', { posts: results, alert: req.query.alert, error: req.query.error, pages: pagesAmount, currentPage: page });
             })
-            .then(results => {console.log(results)})
             .catch(err => res.status(400).send('error getting posts: ' + err))
     },
 
@@ -61,14 +66,14 @@ const uploadFile = (buffer, name, type) => {
     },
 
 
-    new: (req, res)=>{
+    new: (req, res) => {
         res.render('./admin/new_post');
     },
 
     // Define POST route
     create: (request, response) => {
-        const form = new multiparty.Form();    
-          form.parse(request, async (error, fields, files) => {
+        const form = new multiparty.Form();
+        form.parse(request, async (error, fields, files) => {
             if (error) throw new Error(error);
             try {
                 const path = files.fileName[0].path;
@@ -82,17 +87,17 @@ const uploadFile = (buffer, name, type) => {
                 const data = await uploadFile(buffer, fileName, type);
                 knex('posts').insert(
                     {
-                    title: fieldsTitle,
-                    body: fieldsBody,
-                    img_url: data.Location,
-                    user_id: 2, //Hardcoded
-                    date: new Date(),
-                    section: fieldsSection,
-                    img_path: path,
-                    aws_key: data.Key
+                        title: fieldsTitle,
+                        body: fieldsBody,
+                        img_url: data.Location,
+                        user_id: 2, //Hardcoded
+                        date: new Date(),
+                        section: fieldsSection,
+                        img_path: path,
+                        aws_key: data.Key
                     })
                     .then(() => console.log('sent!'))
-                    .catch(err=> console.log('could not add post: ' + err))
+                    .catch(err => console.log('could not add post: ' + err))
                 return response.status(200).send(data)
             } catch (error) {
                 return response.status(400).send(error);
@@ -101,46 +106,46 @@ const uploadFile = (buffer, name, type) => {
 
     },
 
-    delete: (req, res)=> {
+    delete: (req, res) => {
         knex('posts').where('id', req.params.id)
-        .then((knexData) => {
-            /* The following example deletes an object from an S3 bucket. */
-            var par = {
-                Bucket: process.env.S3_BUCKET,
-                Key: knexData[0].aws_key
-            };
-            s3.deleteObject(par, function(err, data) {
-                if (err) console.log(err, err.stack); // an error occurred
-                else     console.log(data);           // successful response
-                /*
-                data = {
-                }
-                */
-            });
-        })
+            .then((knexData) => {
+                /* The following example deletes an object from an S3 bucket. */
+                var par = {
+                    Bucket: process.env.S3_BUCKET,
+                    Key: knexData[0].aws_key
+                };
+                s3.deleteObject(par, function (err, data) {
+                    if (err) console.log(err, err.stack); // an error occurred
+                    else console.log(data);           // successful response
+                    /*
+                    data = {
+                    }
+                    */
+                });
+            })
         knex('posts').where('id', req.params.id).del()
-        .then(res.redirect('/admin/posts/1?alert=Novedad%20eliminada%20con%20exito'))
-        .catch(err => console.log(err))
+            .then(res.redirect('/admin/posts/1?alert=Novedad%20eliminada%20con%20exito'))
+            .catch(err => console.log(err))
     },
 
-    editShow: (req, res)=> {
+    editShow: (req, res) => {
         knex('posts').where('id', req.params.id)
-        .then((result) => {
-            res.render('./admin/edit_post', {post: result[0]});
-        })
+            .then((result) => {
+                res.render('./admin/edit_post', { post: result[0] });
+            })
     },
 
-    edit: (req, res)=> {
+    edit: (req, res) => {
         console.log(req.body.section)
-        if(req.body.section !== "default" && req.body.title !== "" && req.body.body !== "" ) {
+        if (req.body.section !== "default" && req.body.title !== "" && req.body.body !== "") {
             knex('posts').where('id', req.params.id).update({
                 section: req.body.section,
                 title: req.body.title,
                 body: req.body.body
             })
-            .then(()=> res.redirect('/admin/posts/1?alert=Novedad%20editada%20con%20exito'))
+                .then(() => res.redirect('/admin/posts/1?alert=Novedad%20editada%20con%20exito'))
         }
-        else{
+        else {
             res.redirect('/admin/posts/1?error=Error%20editando%20novedad.%20Por%20favor%20intentar%20de%20nuevo.');
         }
     },
@@ -169,8 +174,8 @@ const uploadFile = (buffer, name, type) => {
 
     // Define POST route
     createAudio: (request, response) => {
-        const form = new multiparty.Form();    
-          form.parse(request, async (error, fields, files) => {
+        const form = new multiparty.Form();
+        form.parse(request, async (error, fields, files) => {
             if (error) throw new Error(error);
             try {
                 const path = files.audioFileName[0].path;
@@ -183,15 +188,15 @@ const uploadFile = (buffer, name, type) => {
                 const data = await uploadFile(buffer, fileName, type);
                 knex('audios').insert(
                     {
-                    audio_title: fieldsTitle,
-                    audio_url: data.Location,
-                    user_id: 2, //Hardcoded
-                    audio_date: fieldsDate,
-                    audio_path: path,
-                    aws_key: data.Key
+                        audio_title: fieldsTitle,
+                        audio_url: data.Location,
+                        user_id: 2, //Hardcoded
+                        audio_date: fieldsDate,
+                        audio_path: path,
+                        aws_key: data.Key
                     })
                     .then(() => console.log('sent!'))
-                    .catch(err=> console.log('could not add audio: ' + err))
+                    .catch(err => console.log('could not add audio: ' + err))
                 return response.status(200).send(data)
             } catch (error) {
                 return response.status(400).send(error);
@@ -199,25 +204,25 @@ const uploadFile = (buffer, name, type) => {
         })
     },
 
-    deleteAudio: (req, res)=> {
+    deleteAudio: (req, res) => {
         knex('audios').where('audio_id', req.params.id)
-        .then((knexData) => {
-            /* The following example deletes an object from an S3 bucket. */
-            var par = {
-                Bucket: process.env.S3_BUCKET,
-                Key: knexData[0].aws_key
-            };
-            s3.deleteObject(par, function(err, data) {
-                if (err) console.log(err, err.stack); // an error occurred
-                else     console.log(data);           // successful response
-                /*
-                data = {
-                }
-                */
-            });
-        })
+            .then((knexData) => {
+                /* The following example deletes an object from an S3 bucket. */
+                var par = {
+                    Bucket: process.env.S3_BUCKET,
+                    Key: knexData[0].aws_key
+                };
+                s3.deleteObject(par, function (err, data) {
+                    if (err) console.log(err, err.stack); // an error occurred
+                    else console.log(data);           // successful response
+                    /*
+                    data = {
+                    }
+                    */
+                });
+            })
         knex('audios').where('audio_id', req.params.id).del()
-        .then(res.redirect('/admin/homilias/1?alert=Homilia%20eliminada%20con%20exito'))
-        .catch(err => console.log(err))
+            .then(res.redirect('/admin/homilias/1?alert=Homilia%20eliminada%20con%20exito'))
+            .catch(err => console.log(err))
     }
 }
