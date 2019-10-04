@@ -2,7 +2,7 @@ const knex = require('../db/knex');
 
 module.exports = {
     index: (req, res) => {
-        knex('audios').orderBy('audios_date', 'DESC')
+        knex('audios').orderBy('audio_date', 'DESC')
         .then(audios => {
             if(audios.length > 3) {
                 audios = audios.slice(0, 4);
