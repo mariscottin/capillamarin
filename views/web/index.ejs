@@ -165,6 +165,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                        <% if(audios.length > 0) { %>
                                             <%for(let i=0; i<audios.length; i++) { %>
                                                 <div class="audio-in-modal">
                                                     <h6><%=audios[i].audio_title%></h6>
@@ -176,7 +177,11 @@
                                                     </audio>
                                                 </div>
                                                 <% } %>
-                                            <a href="#" class="see-more-homilias-link">Ver Homilías anteriores</a>
+                                            
+                                                <a href="#" class="see-more-homilias-link">Ver Homilías anteriores</a>
+                                        <% } else {%>
+                                            <p>No se han cargado Homilías aún...</p>
+                                        <% } %>
                                     </div>
                                 </div>
                             </div>
