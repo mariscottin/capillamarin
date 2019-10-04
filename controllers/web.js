@@ -2,7 +2,7 @@ const knex = require('../db/knex');
 
 module.exports = {
     index: (req, res) => {
-        knex('audios').orderBy('date', 'DESC')
+        knex('audios')
         .then(audios => {
             knex('posts').orderBy('created_at', 'DESC')
             .then((results) => {
