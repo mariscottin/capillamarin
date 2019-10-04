@@ -32,31 +32,27 @@ const uploadFile = (buffer, name, type) => {
 module.exports = {
     //POSTS
     allPosts: (req, res) => {
-        console.log('Is something working??????????');
-        knex('audios').orderBy('date', 'DESC')
-        .then((audios)=> {
-            let page = req.params.page;
-            knex('posts').orderBy('created_at', 'DESC')
+        let page = req.params.page;
+        knex('posts').orderBy('created_at', 'DESC')
             .then(results => {
-                    results.forEach(post => {
-                        if (post.body.length > 80) {
-                            shortPost = post.body.substr(0, 80);
-                            post.body = shortPost + '...';
-                        }
-                        let date = post.date.substr(0, 10);
-                        let time = post.date.substr(11, 5);
-    
-                        post.date = date;
-                        post.time = time;
-                    })
-                    let pagesAmount = Math.ceil((results.length) / 10)
-                    let fromPost = (page - 1) * 10;
-                    let toPost = fromPost + 10;
-                    results = results.slice(fromPost, toPost);
-                    res.render('./admin/all_posts', { posts: results, alert: req.query.alert, error: req.query.error, pages: pagesAmount, currentPage: page, audios: audios });
+                results.forEach(post => {
+                    if (post.body.length > 80) {
+                        shortPost = post.body.substr(0, 80);
+                        post.body = shortPost + '...';
+                    }
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+
+                    post.date = date;
+                    post.time = time;
                 })
-                .catch(err => res.status(400).send('error getting posts: ' + err))
-            }).catch(err => res.status(400).send('error getting audios: ' + err))
+                let pagesAmount = Math.ceil((results.length) / 10)
+                let fromPost = (page - 1) * 10;
+                let toPost = fromPost + 10;
+                results = results.slice(fromPost, toPost);
+                res.render('./admin/all_posts', { posts: results, alert: req.query.alert, error: req.query.error, pages: pagesAmount, currentPage: page });
+            })
+            .catch(err => res.status(400).send('error getting posts: ' + err))
     },
 
     redirectToAllPosts: (req, res) => {

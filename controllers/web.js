@@ -2,23 +2,26 @@ const knex = require('../db/knex');
 
 module.exports = {
     index: (req, res) => {
-        knex('posts').orderBy('created_at', 'DESC')
-        .then((results) => {
-            let threePosts = [results[0], results[1], results[2]];
-            threePosts.forEach(post => {
-                let str = post.body.replace(/(?:\r\n|\r|\n)/g, '<br>');
-                post.body = str;
-                if(post.body.length > 150) {
-                    let shortPost = post.body.substr(0, 150);
-                    post.body = shortPost + '...';
-                }
-                let date = post.date.substr(0, 10);
-                let time = post.date.substr(11, 5);
-                
-                post.date = date;
-                post.time = time;
+        knex('audios').orderBy('date', 'DESC')
+        .then(audios => {
+            knex('posts').orderBy('created_at', 'DESC')
+            .then((results) => {
+                let threePosts = [results[0], results[1], results[2]];
+                threePosts.forEach(post => {
+                    let str = post.body.replace(/(?:\r\n|\r|\n)/g, '<br>');
+                    post.body = str;
+                    if(post.body.length > 150) {
+                        let shortPost = post.body.substr(0, 150);
+                        post.body = shortPost + '...';
+                    }
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/index', {posts: threePosts, audios: audios})
             })
-            res.render('./web/index', {posts: threePosts})
         })
     },
 
