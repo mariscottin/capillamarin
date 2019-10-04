@@ -177,8 +177,9 @@
                                                     </audio>
                                                 </div>
                                                 <% } %>
-                                            
-                                                <a href="#" class="see-more-homilias-link">Ver Homilías anteriores</a>
+                                                <% if(audios.length > 4) { %>
+                                                    <a href="#" class="see-more-homilias-link">Ver Homilías anteriores</a>
+                                                <% } %>
                                         <% } else {%>
                                             <p>No se han cargado Homilías aún...</p>
                                         <% } %>
