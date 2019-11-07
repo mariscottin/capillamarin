@@ -32,6 +32,7 @@
     transition: top 0.3s;
     height: 100px;
     z-index: 1;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 .navbar-brand{
