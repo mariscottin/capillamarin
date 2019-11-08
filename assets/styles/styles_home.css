@@ -24,6 +24,10 @@
     text-decoration: underline;
 }
 
+h1{
+    font-family: 'Cinzel Decorative', cursive;
+}
+
 /*---- NAVBAR -----*/
 .navbar{
     position: fixed; /* Make it stick/fixed */
