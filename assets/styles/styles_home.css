@@ -34,6 +34,7 @@
     z-index: 1;
     font-family: 'Cinzel Decorative', cursive;
     font-size: 14px;
+    background-color: #D7CEC7 !important;
 }
 
 .navbar-brand{
