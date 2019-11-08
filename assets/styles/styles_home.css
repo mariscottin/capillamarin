@@ -37,7 +37,7 @@ h1{
     transition: top 0.3s;
     height: 100px;
     z-index: 1;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Cinzel Decorative', cursive !important;
     font-size: 14px;
     background-color: #D7CEC7 !important;
 }
