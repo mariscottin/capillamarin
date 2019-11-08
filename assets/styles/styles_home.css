@@ -152,7 +152,10 @@
     overflow-y: scroll;
     text-align: center;
     padding-top: 20px;
+    color: white;
 }
+
+
 
 .side-section{
     margin-bottom: 10px;
@@ -160,6 +163,14 @@
 
 .side-section .section-title{
     padding-top: 3px;
+}
+
+.side-section a{
+    color: rgb(198, 234, 255);
+}
+
+.modal-content{
+    color: #212529;
 }
 
 .horarios-section{
@@ -240,12 +251,8 @@
         max-height: 80vh;
         border-left: 1px solid rgb(228, 228, 228);
         border-right: 1px solid rgb(228, 228, 228);
-        color: white;
     }
 
-    .sidebar a{
-        color: white;
-    }
 }
 /* ----- FOOTER ----- */
 footer{
