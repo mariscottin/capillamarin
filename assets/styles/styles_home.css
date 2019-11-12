@@ -484,6 +484,10 @@ footer{
         font-weight: normal;
     }
 
+    .footer-distributed .footer-center p span{
+        font-size:12px;
+    }
+
 }
 
 @media (max-width: 355px) {
