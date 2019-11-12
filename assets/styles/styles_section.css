@@ -1,17 +1,11 @@
 /* GENERICO*/
-
-.section-main-title-div{
-    width: 80%;
-    margin: auto;
-    padding-top: 115px;
-    padding-bottom: 30px;
-}
-
 .section-main-title{
     text-align: center;
-    font-size: 2rem;
+    padding-top: 115px;
+    padding-bottom: 30px;
+    margin: auto;
+    font-size: 8vw;
 }
-
 .center-carousel{
     text-align: center;
 
