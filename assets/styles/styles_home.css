@@ -37,7 +37,7 @@ h1{
     transition: top 0.3s;
     height: 100px;
     z-index: 1;
-    font-size: 12px;
+    font-size: 14px;
     background-color: #D7CEC7 !important;
 }
 
@@ -52,6 +52,13 @@ h1{
 
 .logo-img{
     width: 85%;
+    margin-top: 15px;
+}
+
+@media(max-width: 1085px) {
+    .navbar{
+        font-size: 12px;
+    }
 }
 
 @media(max-width: 992px) {
