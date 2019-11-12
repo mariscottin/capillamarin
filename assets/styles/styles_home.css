@@ -37,12 +37,12 @@ h1{
     transition: top 0.3s;
     height: 100px;
     z-index: 1;
-    font-size: 14px;
+    font-size: 12px;
     background-color: #D7CEC7 !important;
 }
 
 .navbar-brand{
-    max-width: 180px;
+    max-width: 100px;
     margin-bottom: 15px;
 }
 
@@ -51,7 +51,18 @@ h1{
 }
 
 .logo-img{
-    width: 100%;
+    width: 85%;
+}
+
+@media(max-width: 992px) {
+    .navbar-brand{
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .logo-img{
+        width: 75%;
+    }
 }
 
 /* Submenu navbar */
