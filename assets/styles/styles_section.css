@@ -48,6 +48,9 @@
         max-width: 200px;
     }
 
+}
+
+@media (max-width: 890px){
     .section-main-title{
         font-size: 8vw;
     }
