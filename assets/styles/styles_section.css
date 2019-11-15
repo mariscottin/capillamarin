@@ -50,7 +50,7 @@
 
 }
 
-@media (max-width: 890px){
+@media (max-width: 480px){
     .section-main-title{
         font-size: 8vw;
     }
