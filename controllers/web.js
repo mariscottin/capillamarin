@@ -131,7 +131,7 @@ module.exports = {
     },
 
     retirosComunitarios: (req, res) => {
-        knex('posts').where('section', 'Retiros Comunitarios').orderBy('created_at', 'DESC')
+        knex('posts').where('section', 'Comunitarios').orderBy('created_at', 'DESC')
             .then((data) => {
                 console.log(data);
                 data.forEach(post => {
