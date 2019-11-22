@@ -16,7 +16,7 @@
 }
 
 .carousel-icon-dark{
-    color: rgb(46, 46, 46);
+    color: rgb(46, 46, 46) !important;
 }
 
 @media (min-width: 576px){
