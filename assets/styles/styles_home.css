@@ -510,6 +510,10 @@ footer{
     background-color: rgb(235, 235, 235);
 }
 
+.novedad-page{
+    padding-top: 112px;
+}
+
 .novedad-page-back{
     margin-bottom: 12px;
 }
@@ -520,7 +524,6 @@ footer{
 
 .novedad-page-title{
     text-align: center;
-    padding-top: 115px;
     padding-bottom: 30px;
     margin: auto;
     font-size: 3vw;
