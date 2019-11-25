@@ -523,8 +523,11 @@ footer{
 }
 
 .novedad-page-title{
-    width: 80%;
+    text-align: center;
+    padding-top: 115px;
+    padding-bottom: 30px;
     margin: auto;
+    font-size: 3vw;
     text-transform: uppercase;
 }
 
@@ -544,8 +547,14 @@ footer{
     font-size: 20px;
 }
 
+@media (max-width: 480px){
+    .novedad-page-title{
+        font-size: 8vw;
+    }
+}
+
 @media(max-width: 890px) {
-    .novedad-page-title, .novedad-page-img, .novedad-page-body{
+    .novedad-page-img, .novedad-page-body{
         width: 100%;
     }
 }
