@@ -285,15 +285,15 @@ h1{
     }
 
 
-    .tabla-misas-zona table{
+    .modal-misas-zona{
         font-size: 12px;
     }
 
-    .tabla-misas-zona #durante-el-año{
+    .tabla-misas-zona thead th#durante-el-año{
         margin-right: 15px;
     }
 
-    .tabla-misas-zona #vacaciones{
+    .tabla-misas-zona thead th#vacaciones{
         margin-left: 15px;
     }
 
