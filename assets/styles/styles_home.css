@@ -286,7 +286,7 @@ h1{
 
 
     .modal-misas-zona{
-        font-size: 12px;
+        font-size: 12px !important;
     }
 
     .tabla-misas-zona thead th#durante-el-año{
