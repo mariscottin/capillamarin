@@ -229,6 +229,20 @@ h1{
     margin-bottom: 3px;
 }
 
+/*-----Misas de la zona-----*/
+.modal-misas-zona{
+    font-size: 8px;
+}
+        
+.tabla-misas-zona thead th#durante-el-año{
+    margin-right: 15px;
+}
+        
+.tabla-misas-zona thead th#vacaciones{
+    margin-left: 15px;
+}
+
+
 
 @media (min-width: 992px) { 
 
@@ -286,18 +300,6 @@ h1{
     
 }
 
-/*-----Misas de la zona-----*/
-.modal-misas-zona{
-    font-size: 12px;
-}
-        
-.tabla-misas-zona thead th#durante-el-año{
-    margin-right: 15px;
-}
-        
-.tabla-misas-zona thead th#vacaciones{
-    margin-left: 15px;
-}
 
 
 
