@@ -9,7 +9,7 @@ module.exports = (app) => {
     });
 
     app.use(session({
-        secret: process.env.SECRET_SESSION, //'secretcat', 
+        secret: process.env.SECRET_SESSION,  
         cookie: {
             maxAge: 86400000 //24 hours
         },
