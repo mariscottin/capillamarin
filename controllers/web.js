@@ -31,7 +31,16 @@ module.exports = {
     },
 
     nosotros: (req, res) => {
-        res.render('./web/nosotros');
+        knex('posts').where('section', 'Nosotros').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/nosotros', { posts: data });
+            })
     },
 
     novedad: (req, res) => {
@@ -44,7 +53,6 @@ module.exports = {
                 let time = post.date.substr(11, 5);
                 post.date = date;
                 post.time = time;
-                console.log(post)
                 res.render('./web/novedad', { post });
             })
     },
@@ -52,52 +60,128 @@ module.exports = {
     // -- Servicios para la Comunidad --
 
     matrimonios: (req, res) => {
-        knex('posts').where('section', 'Matrimonios')
+        knex('posts').where('section', 'Matrimonios').orderBy('created_at', 'DESC')
             .then((data) => {
-                console.log(data);
-                res.render('./web/servicios_comunidad/matrimonios');
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/servicios_comunidad/matrimonios', { posts: data });
             })
-
     },
 
     cursosPrematrimoniales: (req, res) => {
-        res.render('./web/servicios_comunidad/cursos_prematrimoniales');
+        knex('posts').where('section', 'Cursos Prematrimoniales').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/servicios_comunidad/cursos_prematrimoniales', { posts: data });
+            })
+    },
+    
+    bautismos: (req, res) => {
+        knex('posts').where('section', 'Bautismos').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/servicios_comunidad/bautismos', { posts: data });
+            })
     },
 
     reconciliacionesCharlas: (req, res) => {
-        res.render('./web/servicios_comunidad/reconciliacion_charlas');
+        knex('posts').where('section', 'Reconciliaciones y Charlas').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/servicios_comunidad/reconciliacion_charlas', { posts: data });
+            })
     },
 
-    bautismos: (req, res) => {
-        res.render('./web/servicios_comunidad/bautismos');
-    },
 
     visitasEnfermos: (req, res) => {
-        res.render('./web/servicios_comunidad/visitas_enfermos');
+        knex('posts').where('section', 'Visitas a Enfermos').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/servicios_comunidad/visitas_enfermos', { posts: data });
+            })
     },
 
     // -- Espiritualidad --
 
     adoracion: (req, res) => {
-        res.render('./web/espiritualidad/adoracion');
+        knex('posts').where('section', 'Adoración').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/espiritualidad/adoracion', { posts: data });
+            })
     },
 
     liturgiaEspiritualidad: (req, res) => {
-        res.render('./web/espiritualidad/liturgia_espiritualidad');
+        knex('posts').where('section', 'Liturgia y Espiritualidad').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/espiritualidad/liturgia_espiritualidad', { posts: data });
+            })
     },
 
     ministros: (req, res) => {
-        res.render('./web/espiritualidad/ministros');
+        knex('posts').where('section', 'Ministros').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/espiritualidad/ministros', { posts: data });
+            })
     },
 
     coro: (req, res) => {
-        res.render('./web/espiritualidad/coro');
+        knex('posts').where('section', 'Coro').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/espiritualidad/coro', { posts: data });
+            })
     },
 
     aletheia: (req, res) => {
         knex('posts').where('section', 'Aletheia').orderBy('created_at', 'DESC')
             .then((data) => {
-                console.log(data);
                 data.forEach(post => {
                     let date = post.date.substr(0, 10);
                     let time = post.date.substr(11, 5);
@@ -109,31 +193,75 @@ module.exports = {
     },
 
     meditacionCristiana: (req, res) => {
-        res.render('./web/espiritualidad/meditacion_cristiana');
+        knex('posts').where('section', 'Meditacion Cristiana').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/espiritualidad/meditacion_cristiana', { posts: data });
+            })
     },
 
     circulosOracion: (req, res) => {
-        res.render('./web/espiritualidad/circulos_oracion');
+        knex('posts').where('section', 'Circulos de Oracion').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/espiritualidad/circulos_oracion', { posts: data });
+            })
     },
 
     ciclosConferencias: (req, res) => {
-        res.render('./web/espiritualidad/ciclos_conferencias');
+        knex('posts').where('section', 'VFyC').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/espiritualidad/ciclos_conferencias', { posts: data });
+            })
     },
 
     // -- Retiros --
 
     entretiempo: (req, res) => {
-        res.render('./web/retiros/entretiempo');
+        knex('posts').where('section', 'Entretiempo').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/retiros/entretiempo', { posts: data });
+            })
     },
 
     oportunidad: (req, res) => {
-        res.render('./web/retiros/oportunidad');
+        knex('posts').where('section', 'Oportunidad').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/retiros/oportunidad', { posts: data });
+            })
     },
 
     retirosComunitarios: (req, res) => {
         knex('posts').where('section', 'Comunitarios').orderBy('created_at', 'DESC')
             .then((data) => {
-                console.log(data);
                 data.forEach(post => {
                     let date = post.date.substr(0, 10);
                     let time = post.date.substr(11, 5);
@@ -147,29 +275,70 @@ module.exports = {
     // -- Jovenes --
 
     confirmacion: (req, res) => {
-        res.render('./web/jovenes/confirmacion');
+        knex('posts').where('section', 'Confirmacion').orderBy('created_at', 'DESC')
+            .then((data) => {
+                data.forEach(post => {
+                    let date = post.date.substr(0, 10);
+                    let time = post.date.substr(11, 5);
+                    post.date = date;
+                    post.time = time;
+                })
+                res.render('./web/jovenes/confirmacion', { posts: data });
+            })
     },
 
     postConfirmacion: (req, res) => {
-        res.render('./web/jovenes/post_confirmacion');
-    },
-
-    universitarios: (req, res) => {
-        res.render('./web/jovenes/universitarios');
+        knex('posts').where('section', 'Post Confirmacion').orderBy('created_at', 'DESC')
+        .then((data) => {
+            data.forEach(post => {
+                let date = post.date.substr(0, 10);
+                let time = post.date.substr(11, 5);
+                post.date = date;
+                post.time = time;
+            })
+            res.render('./web/jovenes/post_confirmacion', { posts: data });
+        })
     },
 
     mision: (req, res) => {
-        res.render('./web/jovenes/mision');
+        knex('posts').where('section', 'Mision').orderBy('created_at', 'DESC')
+        .then((data) => {
+            data.forEach(post => {
+                let date = post.date.substr(0, 10);
+                let time = post.date.substr(11, 5);
+                post.date = date;
+                post.time = time;
+            })
+            res.render('./web/jovenes/mision', { posts: data });
+        })
     },
 
     // -- Proyectos Comunitarios --
 
     caritas: (req, res) => {
-        res.render('./web/iniciativas_solidarias/caritas');
+        knex('posts').where('section', 'Caritas').orderBy('created_at', 'DESC')
+        .then((data) => {
+            data.forEach(post => {
+                let date = post.date.substr(0, 10);
+                let time = post.date.substr(11, 5);
+                post.date = date;
+                post.time = time;
+            })
+            res.render('./web/iniciativas_solidarias/caritas', { posts: data });
+        })
     },
 
     proyectosComunidad: (req, res) => {
-        res.render('./web/iniciativas_solidarias/proyectos');
+        knex('posts').where('section', 'Proyectos Comunidad').orderBy('created_at', 'DESC')
+        .then((data) => {
+            data.forEach(post => {
+                let date = post.date.substr(0, 10);
+                let time = post.date.substr(11, 5);
+                post.date = date;
+                post.time = time;
+            })
+            res.render('./web/iniciativas_solidarias/proyectos', { posts: data });
+        })
     }
 
 }

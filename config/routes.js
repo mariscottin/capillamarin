@@ -56,8 +56,6 @@ module.exports = (app) => {
 
     app.get('/jovenes/post-confirmacion', web.postConfirmacion);
 
-    app.get('/jovenes/universitarios', web.universitarios);
-
     app.get('/jovenes/mision', web.mision);
 
     // -- Proyectos Comunitarios --
