@@ -13,8 +13,8 @@
             <form action="/login/validate" method="post" class="form-signin">
                 <a href="/">Volver al Inicio</a>
                 <h2 class="form-signin-heading">Login - Admin</h2>
-                <input type="text" name="username" class="form-control" placeholder="Usuario" required autofocus>
-                <input type="password" name="hash" class="form-control" placeholder="Contraseña" required>
+                <input type="text" name="username" class="form-control" placeholder="Usuario" title="username" required autofocus>
+                <input type="password" name="hash" class="form-control" placeholder="Contraseña" title="password" required>
                 <button class="btn btn-lg btn-primary btn-block btn-login" type="submit">Iniciar Sesión</button>
                 <% if(typeof error !== 'undefined') {%>
                 <div class="alert alert-danger" role="alert">
