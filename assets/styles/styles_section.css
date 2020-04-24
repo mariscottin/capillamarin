@@ -20,6 +20,38 @@
     padding: 20px;
 }
 
+
+.colecta-alias{
+    color: #76323F;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.muchas-gracias__container{
+    margin: auto !important;
+}
+
+.colecta__muchas-gracias{
+    background-color: #76323F;
+    border-radius: 50%;
+    max-width: 100px;
+    margin: auto;
+    height: 100px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 6px;
+}
+
+.colecta__muchas-gracias p{
+    margin-top: 20px;
+}
+
+@media(max-width: 991px){
+    .colecta__muchas-gracias{
+        margin-bottom: 30px;
+    }
+}
+
 @media (min-width: 576px){
     .jumbotron {
         padding: 2rem;

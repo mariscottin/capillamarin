@@ -13,6 +13,9 @@ module.exports = (app) => {
 
     app.get('/novedad/:id', web.novedad)
 
+    // -- Colecta Virtual --
+    app.get('/colecta', web.colecta);
+
     // -- Servicios para la Comunidad --
     app.get('/servicios-para-la-comunidad/matrimonios', web.matrimonios);
 
