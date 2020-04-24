@@ -127,7 +127,8 @@ h1{
 
 @media(max-width: 991px){
     .colecta-virtual__container{
-        height: 100px;
+        text-align: center;
+        height: 120px;
     }
 }
 
