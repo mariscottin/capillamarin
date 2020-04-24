@@ -120,7 +120,8 @@ h1{
 
 .colecta-btn:hover{
     text-decoration: none;
-    background-color: rgba(118, 50, 63, 0.623);
+    color: white;
+    background-color: rgb(94, 40, 49);
 }
 
 @media(max-width: 991px){
