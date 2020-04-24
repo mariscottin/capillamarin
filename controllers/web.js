@@ -59,7 +59,7 @@ module.exports = {
 
     // -- Colecta Virtual --
     colecta: (req, res) => {
-        res.render('/web/colecta')
+        res.render('./web/colecta')
     },
 
     // -- Servicios para la Comunidad --
