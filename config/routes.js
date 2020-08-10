@@ -37,6 +37,8 @@ module.exports = (app) => {
 
     app.get('/espiritualidad/coro', web.coro);
 
+    app.get('/espiritualidad/aletheia', web.aletheia);
+
     app.get('/espiritualidad/meditacion-cristiana', web.meditacionCristiana);
 
     app.get('/espiritualidad/circulos-de-oracion', web.circulosOracion);
