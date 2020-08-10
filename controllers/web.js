@@ -184,19 +184,6 @@ module.exports = {
             })
     },
 
-    aletheia: (req, res) => {
-        knex('posts').where('section', 'Aletheia').orderBy('created_at', 'DESC')
-            .then((data) => {
-                data.forEach(post => {
-                    let date = post.date.substr(0, 10);
-                    let time = post.date.substr(11, 5);
-                    post.date = date;
-                    post.time = time;
-                })
-                res.render('./web/espiritualidad/aletheia', { posts: data });
-            })
-    },
-
     meditacionCristiana: (req, res) => {
         knex('posts').where('section', 'Meditacion Cristiana').orderBy('created_at', 'DESC')
             .then((data) => {
